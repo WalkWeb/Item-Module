@@ -10,4 +10,5 @@ class ItemException extends Exception
 {
     public const UNKNOWN_TYPE_ID    = 'Unknown type id';
     public const UNKNOWN_SECTION_ID = 'Unknown section id';
+    public const UNKNOWN_EQUIP_ID   = 'Unknown equip id';
 }
