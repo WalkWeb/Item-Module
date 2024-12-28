@@ -16,4 +16,5 @@ class ItemException extends Exception
     public const UNKNOWN_POTION_TYPE   = 'Unknown weapon type';
     public const UNKNOWN_GENDER_TYPE   = 'Unknown gender type';
     public const UNKNOWN_MATERIAL_TYPE = 'Unknown material type';
+    public const UNKNOWN_MAGIC_TYPE    = 'Unknown magic type';
 }
