@@ -16,6 +16,7 @@ interface EquipTypeInterface
     public const SHOULDERS      = 8;
     public const SHIELD         = 9;
 
+    // TODO Заменить на одноручное / двуручное оружие
     public const SWORD          = 10;
     public const AXE            = 11;
     public const MACE           = 12;
