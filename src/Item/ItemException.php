@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Item;
+
+use Exception;
+
+class ItemException extends Exception
+{
+    public const UNKNOWN_SECTION_ID = 'Unknown section id';
+}

@@ -12,5 +12,7 @@
             "email": "av18775@list.ru"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    }
 }

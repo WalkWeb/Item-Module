@@ -11,9 +11,7 @@ class Item
     private int $type_id;
     private ?int $equip_id;
     private int $magic_id;
-    /** Секция под экипировку, если это экипировка */
     private int $section_id;
-    /** В какой секции инвентаря находится предмет */
     private int $inventory_id;
     private ?int $type_weapon_id;
     private ?int $type_armor_id;
