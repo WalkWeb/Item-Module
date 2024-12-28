@@ -28,7 +28,7 @@ class SectionTypeTest extends TestCase
     {
         $id = 99;
         $this->expectException(ItemException::class);
-        $this->expectExceptionMessage(ItemException::UNKNOWN_SECTION_ID . ': ' . $id);
+        $this->expectExceptionMessage(ItemException::UNKNOWN_SECTION_TYPE . ': ' . $id);
         new SectionType($id);
     }
 

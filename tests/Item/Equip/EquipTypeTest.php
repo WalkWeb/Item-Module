@@ -28,7 +28,7 @@ class EquipTypeTest extends TestCase
     {
         $id = 99;
         $this->expectException(ItemException::class);
-        $this->expectExceptionMessage(ItemException::UNKNOWN_EQUIP_ID . ': ' . $id);
+        $this->expectExceptionMessage(ItemException::UNKNOWN_EQUIP_TYPE . ': ' . $id);
         new EquipType($id);
     }
 

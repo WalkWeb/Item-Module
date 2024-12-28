@@ -70,7 +70,7 @@ class WeaponType implements WeaponTypeInterface
     private function setName(int $id): void
     {
         if (!array_key_exists($id, self::$map)) {
-            throw new ItemException(ItemException::UNKNOWN_WEAPON_ID . ': ' . $id);
+            throw new ItemException(ItemException::UNKNOWN_WEAPON_TYPE . ': ' . $id);
         }
 
         $this->name = self::$map[$id];
