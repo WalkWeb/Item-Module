@@ -13,15 +13,15 @@ class SectionTypeTest extends TestCase
     /**
      * @dataProvider successDataProvider
      * @param int $id
-     * @param string $exceptedType
+     * @param string $exceptedName
      * @throws ItemException
      */
-    public function testSectionTypeCreateSuccess(int $id, string $exceptedType): void
+    public function testSectionTypeCreateSuccess(int $id, string $exceptedName): void
     {
         $section = new SectionType($id);
 
         self::assertEquals($id, $section->getId());
-        self::assertEquals($exceptedType, $section->getName());
+        self::assertEquals($exceptedName, $section->getName());
     }
 
     public function testSectionTypeCreateFail(): void
@@ -32,6 +32,9 @@ class SectionTypeTest extends TestCase
         new SectionType($id);
     }
 
+    /**
+     * @return array
+     */
     public function successDataProvider(): array
     {
         return [

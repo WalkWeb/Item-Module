@@ -16,4 +16,7 @@ interface SectionTypeInterface
     public const LEGS       = 8;
     public const RING       = 9;
     public const SHOULDERS  = 10;
+
+    public function getId(): int;
+    public function getName(): string;
 }
