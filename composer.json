@@ -1,18 +1,21 @@
 {
-    "name": "walk/item.loc",
-    "autoload": {
-        "psr-4": {
-            "Item\\": "src/Item/",
-            "Tests\\": "tests/"
-        }
-    },
-    "authors": [
-        {
-            "name": "WalkWeb",
-            "email": "av18775@list.ru"
-        }
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "^9.6"
+  "name": "walk/item.loc",
+  "autoload": {
+    "psr-4": {
+      "Item\\": "src/Item/",
+      "Tests\\": "tests/"
     }
+  },
+  "authors": [
+    {
+      "name": "WalkWeb",
+      "email": "av18775@list.ru"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  },
+  "require": {
+    "ext-mbstring": "*"
+  }
 }

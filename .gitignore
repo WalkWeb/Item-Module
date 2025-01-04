@@ -1,4 +1,5 @@
 /vendor/
 .idea/
+test_coverage/
 
 .phpunit.result.cache
