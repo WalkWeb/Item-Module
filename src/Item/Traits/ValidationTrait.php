@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Item\Traits;
 
-use DateTime;
-use DateTimeInterface;
-use Exception;
 use Item\ItemException;
 
 trait ValidationTrait
@@ -25,6 +22,26 @@ trait ValidationTrait
         }
 
         return $data[$field];
+    }
+
+    /**
+     * @param array $data
+     * @param string $field
+     * @param string $error
+     * @return int|null
+     * @throws ItemException
+     */
+    protected static function intOrNull(array $data, string $field, string $error): ?int
+    {
+        if (!array_key_exists($field, $data)) {
+            throw new ItemException($error);
+        }
+
+        if (is_int($data[$field]) || $data[$field] === null) {
+            return $data[$field];
+        }
+
+        throw new ItemException($error);
     }
 
     /**

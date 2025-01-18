@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Item\Drawing;
 
+use Item\Type\Armor\ArmorTypeInterface;
+use Item\Type\Equip\EquipTypeInterface;
 use Item\Type\ItemTypeInterface;
+use Item\Type\Material\MaterialTypeInterface;
+use Item\Type\Potion\PotionTypeInterface;
+use Item\Type\Section\SectionTypeInterface;
+use Item\Type\Weapon\WeaponTypeInterface;
 
 class Drawing implements DrawingInterface
 {
@@ -14,6 +20,12 @@ class Drawing implements DrawingInterface
     private int $price;
     private int $minLevel;
     private ItemTypeInterface $type;
+    private ?EquipTypeInterface $equipType;
+    private ?SectionTypeInterface $sectionType;
+    private ?WeaponTypeInterface $weaponType;
+    private ?ArmorTypeInterface $armorType;
+    private ?PotionTypeInterface $potionType;
+    private ?MaterialTypeInterface $materialType;
 
     public function __construct(
         int $id,
@@ -21,7 +33,13 @@ class Drawing implements DrawingInterface
         string $icon,
         int $price,
         int $minLevel,
-        ItemTypeInterface $type
+        ItemTypeInterface $type,
+        ?EquipTypeInterface $equipType,
+        ?SectionTypeInterface $sectionType,
+        ?WeaponTypeInterface $weaponType,
+        ?ArmorTypeInterface $armorType,
+        ?PotionTypeInterface $potionType,
+        ?MaterialTypeInterface $materialType
     )
     {
         $this->id = $id;
@@ -30,6 +48,12 @@ class Drawing implements DrawingInterface
         $this->price = $price;
         $this->minLevel = $minLevel;
         $this->type = $type;
+        $this->equipType = $equipType;
+        $this->sectionType = $sectionType;
+        $this->weaponType = $weaponType;
+        $this->armorType = $armorType;
+        $this->potionType = $potionType;
+        $this->materialType = $materialType;
     }
 
     /**
@@ -78,5 +102,53 @@ class Drawing implements DrawingInterface
     public function getType(): ItemTypeInterface
     {
         return $this->type;
+    }
+
+    /**
+     * @return EquipTypeInterface|null
+     */
+    public function getEquipType(): ?EquipTypeInterface
+    {
+        return $this->equipType;
+    }
+
+    /**
+     * @return SectionTypeInterface|null
+     */
+    public function getSectionType(): ?SectionTypeInterface
+    {
+        return $this->sectionType;
+    }
+
+    /**
+     * @return WeaponTypeInterface|null
+     */
+    public function getWeaponType(): ?WeaponTypeInterface
+    {
+        return $this->weaponType;
+    }
+
+    /**
+     * @return ArmorTypeInterface|null
+     */
+    public function getArmorType(): ?ArmorTypeInterface
+    {
+        return $this->armorType;
+    }
+
+    /**
+     * @return PotionTypeInterface|null
+     */
+    public function getPotionType(): ?PotionTypeInterface
+    {
+        return $this->potionType;
+    }
+
+    /**
+     * @return MaterialTypeInterface|null
+     */
+    public function getMaterialType(): ?MaterialTypeInterface
+    {
+        return $this->materialType;
     }
 }

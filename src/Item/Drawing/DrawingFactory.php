@@ -6,7 +6,14 @@ namespace Item\Drawing;
 
 use Item\ItemException;
 use Item\Traits\ValidationTrait;
+use Item\Type\Armor\ArmorType;
+use Item\Type\Equip\EquipType;
 use Item\Type\ItemType;
+use Item\Type\ItemTypeInterface;
+use Item\Type\Material\MaterialType;
+use Item\Type\Potion\PotionType;
+use Item\Type\Section\SectionType;
+use Item\Type\Weapon\WeaponType;
 
 class DrawingFactory
 {
@@ -19,13 +26,39 @@ class DrawingFactory
      */
     public static function create(array $data): DrawingInterface
     {
+        $type = new ItemType(self::int($data, 'type_id', DrawingException::INVALID_TYPE_ID));
+
+        $equipTypeId = self::intOrNull($data, 'equip_type_id', DrawingException::INVALID_EQUIP_TYPE_ID);
+        $equipType =  $equipTypeId ? new EquipType($equipTypeId) : null;
+
+        $sectionTypeId = self::intOrNull($data, 'section_type_id', DrawingException::INVALID_SECTION_TYPE_ID);
+        $sectionType =  $sectionTypeId ? new SectionType($sectionTypeId) : null;
+
+        $weaponTypeId = self::intOrNull($data, 'weapon_type_id', DrawingException::INVALID_WEAPON_TYPE_ID);
+        $weaponType =  $weaponTypeId ? new WeaponType($weaponTypeId) : null;
+
+        $armorTypeId = self::intOrNull($data, 'armor_type_id', DrawingException::INVALID_ARMOR_TYPE_ID);
+        $armorType =  $armorTypeId ? new ArmorType($armorTypeId) : null;
+
+        $potionTypeId = self::intOrNull($data, 'potion_type_id', DrawingException::INVALID_POTION_TYPE_ID);
+        $potionType =  $potionTypeId ? new PotionType($potionTypeId) : null;
+
+        $materialTypeId = self::intOrNull($data, 'material_type_id', DrawingException::INVALID_MATERIAL_TYPE_ID);
+        $materialType =  $materialTypeId ? new MaterialType($materialTypeId) : null;
+
         return new Drawing(
             self::int($data, 'id', DrawingException::INVALID_ID),
             self::string($data, 'name', DrawingException::INVALID_NAME),
             self::string($data, 'icon', DrawingException::INVALID_ICON),
             self::int($data, 'price', DrawingException::INVALID_PRICE),
             self::int($data, 'min_level', DrawingException::INVALID_MIN_LEVEL),
-            new ItemType(self::int($data, 'type_id', DrawingException::INVALID_TYPE_ID)),
+            $type,
+            $equipType,
+            $sectionType,
+            $weaponType,
+            $armorType,
+            $potionType,
+            $materialType,
         );
     }
 }
