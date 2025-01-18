@@ -6,6 +6,7 @@ namespace Item\Drawing;
 
 use Item\ItemException;
 use Item\Traits\ValidationTrait;
+use Item\Type\ItemType;
 
 class DrawingFactory
 {
@@ -24,6 +25,7 @@ class DrawingFactory
             self::string($data, 'icon', DrawingException::INVALID_ICON),
             self::int($data, 'price', DrawingException::INVALID_PRICE),
             self::int($data, 'min_level', DrawingException::INVALID_MIN_LEVEL),
+            new ItemType(self::int($data, 'type_id', DrawingException::INVALID_TYPE_ID)),
         );
     }
 }

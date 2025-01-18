@@ -25,6 +25,7 @@ class DrawingFactoryTest extends TestCase
         self::assertEquals($data['icon'], $drawing->getIcon());
         self::assertEquals($data['price'], $drawing->getPrice());
         self::assertEquals($data['min_level'], $drawing->getMinLevel());
+        self::assertEquals($data['type_id'], $drawing->getType()->getId());
     }
 
     /**
@@ -52,6 +53,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
             ],
         ];
@@ -70,6 +72,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_ID,
             ],
@@ -81,6 +84,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_ID,
             ],
@@ -91,6 +95,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_NAME,
             ],
@@ -102,6 +107,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_NAME,
             ],
@@ -112,6 +118,7 @@ class DrawingFactoryTest extends TestCase
                     'name'      => 'Item Name',
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_ICON,
             ],
@@ -123,6 +130,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => [],
                     'price'     => 1000,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_ICON,
             ],
@@ -133,6 +141,7 @@ class DrawingFactoryTest extends TestCase
                     'name'      => 'Item Name',
                     'icon'      => 'icon.png',
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_PRICE,
             ],
@@ -144,6 +153,7 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000.56,
                     'min_level' => 4,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_PRICE,
             ],
@@ -154,6 +164,7 @@ class DrawingFactoryTest extends TestCase
                     'name'      => 'Item Name',
                     'icon'      => 'icon.png',
                     'price'     => 1000,
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_MIN_LEVEL,
             ],
@@ -165,8 +176,32 @@ class DrawingFactoryTest extends TestCase
                     'icon'      => 'icon.png',
                     'price'     => 1000,
                     'min_level' => '4',
+                    'type_id'   => 1,
                 ],
                 DrawingException::INVALID_MIN_LEVEL,
+            ],
+            // miss type_id
+            [
+                [
+                    'id'        => 143,
+                    'name'      => 'Item Name',
+                    'icon'      => 'icon.png',
+                    'price'     => 1000,
+                    'min_level' => 4,
+                ],
+                DrawingException::INVALID_TYPE_ID,
+            ],
+            // type_id invalid type
+            [
+                [
+                    'id'        => 143,
+                    'name'      => 'Item Name',
+                    'icon'      => 'icon.png',
+                    'price'     => 1000,
+                    'min_level' => 4,
+                    'type_id'   => null,
+                ],
+                DrawingException::INVALID_TYPE_ID,
             ],
         ];
     }

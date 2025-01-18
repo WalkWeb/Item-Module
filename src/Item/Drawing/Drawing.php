@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Item\Drawing;
 
+use Item\Type\ItemTypeInterface;
+
 class Drawing implements DrawingInterface
 {
     private int $id;
@@ -11,14 +13,23 @@ class Drawing implements DrawingInterface
     private string $icon;
     private int $price;
     private int $minLevel;
+    private ItemTypeInterface $type;
 
-    public function __construct(int $id, string $name, string $icon, int $price, int $minLevel)
+    public function __construct(
+        int $id,
+        string $name,
+        string $icon,
+        int $price,
+        int $minLevel,
+        ItemTypeInterface $type
+    )
     {
         $this->id = $id;
         $this->name = $name;
         $this->icon = $icon;
         $this->price = $price;
         $this->minLevel = $minLevel;
+        $this->type = $type;
     }
 
     /**
@@ -59,5 +70,13 @@ class Drawing implements DrawingInterface
     public function getMinLevel(): int
     {
         return $this->minLevel;
+    }
+
+    /**
+     * @return ItemTypeInterface
+     */
+    public function getType(): ItemTypeInterface
+    {
+        return $this->type;
     }
 }
