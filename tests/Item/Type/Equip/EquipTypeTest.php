@@ -76,43 +76,11 @@ class EquipTypeTest extends TestCase
             ],
             [
                 10,
-                'sword',
+                'one hand',
             ],
             [
                 11,
-                'axe',
-            ],
-            [
-                12,
-                'mace',
-            ],
-            [
-                13,
-                'bow',
-            ],
-            [
-                14,
-                'staff',
-            ],
-            [
-                15,
-                'dagger',
-            ],
-            [
-                16,
-                'two hand sword',
-            ],
-            [
-                17,
-                'two hand axe',
-            ],
-            [
-                18,
-                'two hand mace',
-            ],
-            [
-                19,
-                'crossbow',
+                'two hand',
             ],
         ];
     }

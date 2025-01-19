@@ -18,19 +18,8 @@ class EquipType implements EquipTypeInterface
         self::LEGS           => 'legs',
         self::SHOULDERS      => 'shoulders',
         self::SHIELD         => 'shield',
-
-        self::SWORD          => 'sword',
-        self::AXE            => 'axe',
-        self::MACE           => 'mace',
-        self::BOW            => 'bow',
-        self::STAFF          => 'staff',
-        self::DAGGER         => 'dagger',
-
-        self::TWO_HAND_SWORD => 'two hand sword',
-        self::TWO_HAND_AXE   => 'two hand axe',
-        self::TWO_HAND_MACE  => 'two hand mace',
-
-        self::CROSSBOW       => 'crossbow',
+        self::ONE_HAND       => 'one hand',
+        self::TWO_HAND       => 'two hand',
     ];
 
     private int $id;
