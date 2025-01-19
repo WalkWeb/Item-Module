@@ -19,6 +19,9 @@ class Drawing implements DrawingInterface
     private string $icon;
     private int $price;
     private int $minLevel;
+    private int $minStrength;
+    private int $minDexterity;
+    private int $minIntelligence;
     private ItemTypeInterface $type;
     private ?EquipTypeInterface $equipType;
     private ?SectionTypeInterface $sectionType;
@@ -33,6 +36,9 @@ class Drawing implements DrawingInterface
         string $icon,
         int $price,
         int $minLevel,
+        int $minStrength,
+        int $minDexterity,
+        int $minIntelligence,
         ItemTypeInterface $type,
         ?EquipTypeInterface $equipType,
         ?SectionTypeInterface $sectionType,
@@ -47,6 +53,9 @@ class Drawing implements DrawingInterface
         $this->icon = $icon;
         $this->price = $price;
         $this->minLevel = $minLevel;
+        $this->minStrength = $minStrength;
+        $this->minDexterity = $minDexterity;
+        $this->minIntelligence = $minIntelligence;
         $this->type = $type;
         $this->equipType = $equipType;
         $this->sectionType = $sectionType;
@@ -94,6 +103,30 @@ class Drawing implements DrawingInterface
     public function getMinLevel(): int
     {
         return $this->minLevel;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinStrength(): int
+    {
+        return $this->minStrength;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinDexterity(): int
+    {
+        return $this->minDexterity;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMinIntelligence(): int
+    {
+        return $this->minIntelligence;
     }
 
     /**

@@ -19,6 +19,9 @@ interface DrawingInterface
     public function getIcon(): string;
     public function getPrice(): int;
     public function getMinLevel(): int;
+    public function getMinStrength(): int;
+    public function getMinDexterity(): int;
+    public function getMinIntelligence(): int;
     public function getType(): ItemTypeInterface;
     public function getEquipType(): ?EquipTypeInterface;
     public function getSectionType(): ?SectionTypeInterface;

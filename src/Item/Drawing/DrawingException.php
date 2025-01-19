@@ -13,6 +13,9 @@ class DrawingException extends Exception
     public const INVALID_ICON             = 'Incorrect parameter "icon", it required and type string';
     public const INVALID_PRICE            = 'Incorrect parameter "price", it required and type int';
     public const INVALID_MIN_LEVEL        = 'Incorrect parameter "min_level", it required and type int';
+    public const INVALID_MIN_STRENGTH     = 'Incorrect parameter "min_strength", it required and type int';
+    public const INVALID_MIN_DEXTERITY    = 'Incorrect parameter "min_dexterity", it required and type int';
+    public const INVALID_MIN_INTELLIGENCE = 'Incorrect parameter "min_intelligence", it required and type int';
     public const INVALID_TYPE_ID          = 'Incorrect parameter "type_id", it required and type int';
     public const INVALID_EQUIP_TYPE_ID    = 'Incorrect parameter "equip_type_id", it required and type int';
     public const INVALID_SECTION_TYPE_ID  = 'Incorrect parameter "section_type_id", it required and type int';
