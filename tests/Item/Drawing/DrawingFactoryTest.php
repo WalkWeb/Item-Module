@@ -603,6 +603,78 @@ class DrawingFactoryTest extends TestCase
                 ],
                 DrawingException::INVALID_MATERIAL_TYPE_ID,
             ],
+            // type_id = equip && equip_type_id = null
+            [
+                [
+                    'id'               => 143,
+                    'name'             => 'Sword',
+                    'icon'             => 'icon.png',
+                    'price'            => 1000,
+                    'min_level'        => 4,
+                    'type_id'          => ItemTypeInterface::EQUIP,
+                    'equip_type_id'    => null,
+                    'section_type_id'  => SectionTypeInterface::RIGHT_HAND,
+                    'weapon_type_id'   => WeaponTypeInterface::SWORD,
+                    'armor_type_id'    => null,
+                    'potion_type_id'   => null,
+                    'material_type_id' => null,
+                ],
+                DrawingException::MISS_EQUIP_TYPE,
+            ],
+            // type_id = equip && section_type_id = null
+            [
+                [
+                    'id'               => 143,
+                    'name'             => 'Sword',
+                    'icon'             => 'icon.png',
+                    'price'            => 1000,
+                    'min_level'        => 4,
+                    'type_id'          => ItemTypeInterface::EQUIP,
+                    'equip_type_id'    => EquipTypeInterface::SWORD,
+                    'section_type_id'  => null,
+                    'weapon_type_id'   => WeaponTypeInterface::SWORD,
+                    'armor_type_id'    => null,
+                    'potion_type_id'   => null,
+                    'material_type_id' => null,
+                ],
+                DrawingException::MISS_SECTION_TYPE,
+            ],
+            // type_id = potion && potion_type_id = null
+            [
+                [
+                    'id'               => 143,
+                    'name'             => 'Heal Potion',
+                    'icon'             => 'icon.png',
+                    'price'            => 200,
+                    'min_level'        => 4,
+                    'type_id'          => ItemTypeInterface::POTION,
+                    'equip_type_id'    => null,
+                    'section_type_id'  => null,
+                    'weapon_type_id'   => null,
+                    'armor_type_id'    => null,
+                    'potion_type_id'   => null,
+                    'material_type_id' => null,
+                ],
+                DrawingException::MISS_POTION_TYPE,
+            ],
+            // type_id = potion && potion_type_id = null
+            [
+                [
+                    'id'               => 123,
+                    'name'             => 'Steel',
+                    'icon'             => 'icon.png',
+                    'price'            => 100,
+                    'min_level'        => 1,
+                    'type_id'          => ItemTypeInterface::MATERIAL,
+                    'equip_type_id'    => null,
+                    'section_type_id'  => null,
+                    'weapon_type_id'   => null,
+                    'armor_type_id'    => null,
+                    'potion_type_id'   => null,
+                    'material_type_id' => null,
+                ],
+                DrawingException::MISS_MATERIAL_TYPE,
+            ],
         ];
     }
 }

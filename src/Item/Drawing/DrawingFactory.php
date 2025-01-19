@@ -46,6 +46,27 @@ class DrawingFactory
         $materialTypeId = self::intOrNull($data, 'material_type_id', DrawingException::INVALID_MATERIAL_TYPE_ID);
         $materialType =  $materialTypeId ? new MaterialType($materialTypeId) : null;
 
+        switch ($type->getId()) {
+            case ItemTypeInterface::EQUIP:
+                if ($equipType === null) {
+                    throw new ItemException(DrawingException::MISS_EQUIP_TYPE);
+                }
+                if ($sectionType === null) {
+                    throw new ItemException(DrawingException::MISS_SECTION_TYPE);
+                }
+                break;
+            case ItemTypeInterface::POTION:
+                if ($potionType === null) {
+                    throw new ItemException(DrawingException::MISS_POTION_TYPE);
+                }
+                break;
+            case ItemTypeInterface::MATERIAL:
+                if ($materialType === null) {
+                    throw new ItemException(DrawingException::MISS_MATERIAL_TYPE);
+                }
+                break;
+        }
+
         return new Drawing(
             self::int($data, 'id', DrawingException::INVALID_ID),
             self::string($data, 'name', DrawingException::INVALID_NAME),
