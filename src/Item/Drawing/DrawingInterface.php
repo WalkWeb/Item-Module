@@ -6,6 +6,7 @@ namespace Item\Drawing;
 
 use Item\Type\Armor\ArmorTypeInterface;
 use Item\Type\Equip\EquipTypeInterface;
+use Item\Type\Gender\GenderTypeInterface;
 use Item\Type\ItemTypeInterface;
 use Item\Type\Material\MaterialTypeInterface;
 use Item\Type\Potion\PotionTypeInterface;
@@ -29,4 +30,5 @@ interface DrawingInterface
     public function getArmorType(): ?ArmorTypeInterface;
     public function getPotionType(): ?PotionTypeInterface;
     public function getMaterialType(): ?MaterialTypeInterface;
+    public function getGenderType(): ?GenderTypeInterface;
 }

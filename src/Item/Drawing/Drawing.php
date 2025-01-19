@@ -6,6 +6,7 @@ namespace Item\Drawing;
 
 use Item\Type\Armor\ArmorTypeInterface;
 use Item\Type\Equip\EquipTypeInterface;
+use Item\Type\Gender\GenderTypeInterface;
 use Item\Type\ItemTypeInterface;
 use Item\Type\Material\MaterialTypeInterface;
 use Item\Type\Potion\PotionTypeInterface;
@@ -29,6 +30,7 @@ class Drawing implements DrawingInterface
     private ?ArmorTypeInterface $armorType;
     private ?PotionTypeInterface $potionType;
     private ?MaterialTypeInterface $materialType;
+    private ?GenderTypeInterface $genderType;
 
     public function __construct(
         int $id,
@@ -45,7 +47,8 @@ class Drawing implements DrawingInterface
         ?WeaponTypeInterface $weaponType,
         ?ArmorTypeInterface $armorType,
         ?PotionTypeInterface $potionType,
-        ?MaterialTypeInterface $materialType
+        ?MaterialTypeInterface $materialType,
+        ?GenderTypeInterface $genderType
     )
     {
         $this->id = $id;
@@ -63,6 +66,7 @@ class Drawing implements DrawingInterface
         $this->armorType = $armorType;
         $this->potionType = $potionType;
         $this->materialType = $materialType;
+        $this->genderType = $genderType;
     }
 
     /**
@@ -183,5 +187,13 @@ class Drawing implements DrawingInterface
     public function getMaterialType(): ?MaterialTypeInterface
     {
         return $this->materialType;
+    }
+
+    /**
+     * @return GenderTypeInterface|null
+     */
+    public function getGenderType(): ?GenderTypeInterface
+    {
+        return $this->genderType;
     }
 }

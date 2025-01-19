@@ -23,9 +23,11 @@ class DrawingException extends Exception
     public const INVALID_ARMOR_TYPE_ID    = 'Incorrect parameter "armor_type_id", it required and type int';
     public const INVALID_POTION_TYPE_ID   = 'Incorrect parameter "potion_type_id", it required and type int';
     public const INVALID_MATERIAL_TYPE_ID = 'Incorrect parameter "material_type_id", it required and type int';
+    public const INVALID_GENDER_TYPE_ID   = 'Incorrect parameter "gender_type_id", it required and type int';
 
     public const MISS_EQUIP_TYPE          = 'Equipment type not specified';
     public const MISS_SECTION_TYPE        = 'Equipment section not specified';
     public const MISS_POTION_TYPE         = 'Potion type not specified';
     public const MISS_MATERIAL_TYPE       = 'Material type not specified';
+    public const MISS_GENDER_TYPE         = 'Gender type not specified';
 }
