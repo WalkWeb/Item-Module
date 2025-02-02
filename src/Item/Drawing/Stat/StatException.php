@@ -8,6 +8,9 @@ use Exception;
 
 class StatException extends Exception
 {
+    public const ALREADY_EXIST   = 'StatCollection: stat to be added already exists';
+    public const EXPECTED_ARRAY  = 'StatCollectionFactory: expected array data';
+
     public const INVALID_NAME    = 'Incorrect parameter "name", it required and type string';
     public const INVALID_VALUE   = 'Incorrect parameter "value", it required and type int or float';
     public const INVALID_QUALITY = 'Incorrect parameter "quality", it required and type bool';
