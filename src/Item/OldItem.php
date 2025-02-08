@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Item;
 
-class Item
+class OldItem
 {
     private int $id;
     private int $db_id;
