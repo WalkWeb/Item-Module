@@ -55,8 +55,8 @@ interface OffenseInterface
     public function addIncreaseAccuracy(int $increaseAccuracy): void;
     public function getIncreaseMagicAccuracy(): int;
     public function addIncreaseMagicAccuracy(int $increaseMagicAccuracy): void;
-    public function getBlockIgnoring(): int;
-    public function addBlockIgnoring(int $blockIgnoring): void;
+    public function getBlockIgnore(): int;
+    public function addBlockIgnore(int $blockIgnore): void;
     public function getCriticalChance(): int;
     public function addCriticalChance(int $criticalChance): void;
     public function getCriticalMultiplier(): int;
@@ -69,4 +69,8 @@ interface OffenseInterface
     public function addVampirism(int $vampirism): void;
     public function getMagicVampirism(): int;
     public function addMagicVampirism(int $magicVampirism): void;
+    public function getCriticalStun(): int;
+    public function addCriticalStun(int $criticalStun): void;
+    public function getCriticalBleeding(): int;
+    public function addCriticalBleeding(int $criticalBleeding): void;
 }

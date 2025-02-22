@@ -40,6 +40,8 @@ class Offense implements OffenseInterface
     private int $damageMultiplier = 0;
     private int $vampirism = 0;
     private int $magicVampirism = 0;
+    private int $criticalStun = 0;
+    private int $criticalBleeding = 0;
 
     public function __construct(?WeaponTypeInterface $weaponType, ?DamageTypeInterface $damageType)
     {
@@ -277,14 +279,14 @@ class Offense implements OffenseInterface
         $this->increaseMagicAccuracy += $increaseMagicAccuracy;
     }
 
-    public function getBlockIgnoring(): int
+    public function getBlockIgnore(): int
     {
         return $this->blockIgnoring;
     }
 
-    public function addBlockIgnoring(int $blockIgnoring): void
+    public function addBlockIgnore(int $blockIgnore): void
     {
-        $this->blockIgnoring += $blockIgnoring;
+        $this->blockIgnoring += $blockIgnore;
     }
 
     public function getCriticalChance(): int
@@ -345,5 +347,25 @@ class Offense implements OffenseInterface
     public function addMagicVampirism(int $magicVampirism): void
     {
         $this->magicVampirism += $magicVampirism;
+    }
+
+    public function getCriticalStun(): int
+    {
+        return $this->criticalStun;
+    }
+
+    public function addCriticalStun(int $criticalStun): void
+    {
+        $this->criticalStun += $criticalStun;
+    }
+
+    public function getCriticalBleeding(): int
+    {
+        return $this->criticalBleeding;
+    }
+
+    public function addCriticalBleeding(int $criticalBleeding): void
+    {
+        $this->criticalBleeding += $criticalBleeding;
     }
 }

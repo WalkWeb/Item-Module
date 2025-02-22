@@ -43,13 +43,15 @@ class OffenseTest extends TestCase
         self::assertEquals(0, $offense->getMagicAccuracy());
         self::assertEquals(0, $offense->getIncreaseAccuracy());
         self::assertEquals(0, $offense->getIncreaseMagicAccuracy());
-        self::assertEquals(0, $offense->getBlockIgnoring());
+        self::assertEquals(0, $offense->getBlockIgnore());
         self::assertEquals(0, $offense->getCriticalChance());
         self::assertEquals(0, $offense->getCriticalMultiplier());
         self::assertEquals(0, $offense->getIncreaseCriticalChance());
         self::assertEquals(0, $offense->getDamageMultiplier());
         self::assertEquals(0, $offense->getVampirism());
         self::assertEquals(0, $offense->getMagicVampirism());
+        self::assertEquals(0, $offense->getCriticalStun());
+        self::assertEquals(0, $offense->getCriticalBleeding());
 
         $physicalDamage = 100;
         $fireDamage = 95;
@@ -80,6 +82,8 @@ class OffenseTest extends TestCase
         $damageMultiplier = 10;
         $vampirism = 20;
         $magicVampirism = 15;
+        $criticalStun = 1;
+        $criticalBleeding = 2;
 
         $offense->addPhysicalDamage($physicalDamage);
         $offense->addFireDamage($fireDamage);
@@ -103,13 +107,15 @@ class OffenseTest extends TestCase
         $offense->addMagicAccuracy($magicAccuracy);
         $offense->addIncreaseAccuracy($increaseAccuracy);
         $offense->addIncreaseMagicAccuracy($increaseMagicAccuracy);
-        $offense->addBlockIgnoring($blockIgnoring);
+        $offense->addBlockIgnore($blockIgnoring);
         $offense->addCriticalChance($criticalChance);
         $offense->addCriticalMultiplier($criticalMultiplier);
         $offense->addIncreaseCriticalChance($increaseCriticalChance);
         $offense->addDamageMultiplier($damageMultiplier);
         $offense->addVampirism($vampirism);
         $offense->addMagicVampirism($magicVampirism);
+        $offense->addCriticalStun($criticalStun);
+        $offense->addCriticalBleeding($criticalBleeding);
 
         self::assertEquals($damageType, $offense->getDamageType());
         self::assertEquals($physicalDamage, $offense->getPhysicalDamage());
@@ -134,12 +140,14 @@ class OffenseTest extends TestCase
         self::assertEquals($magicAccuracy, $offense->getMagicAccuracy());
         self::assertEquals($increaseAccuracy, $offense->getIncreaseAccuracy());
         self::assertEquals($increaseMagicAccuracy, $offense->getIncreaseMagicAccuracy());
-        self::assertEquals($blockIgnoring, $offense->getBlockIgnoring());
+        self::assertEquals($blockIgnoring, $offense->getBlockIgnore());
         self::assertEquals($criticalChance, $offense->getCriticalChance());
         self::assertEquals($criticalMultiplier, $offense->getCriticalMultiplier());
         self::assertEquals($increaseCriticalChance, $offense->getIncreaseCriticalChance());
         self::assertEquals($damageMultiplier, $offense->getDamageMultiplier());
         self::assertEquals($vampirism, $offense->getVampirism());
         self::assertEquals($magicVampirism, $offense->getMagicVampirism());
+        self::assertEquals($criticalStun, $offense->getCriticalStun());
+        self::assertEquals($criticalBleeding, $offense->getCriticalBleeding());
     }
 }
