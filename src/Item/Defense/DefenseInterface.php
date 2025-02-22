@@ -52,6 +52,6 @@ interface DefenseInterface
     public function addGlobalResist(int $globalResist): void;
     public function getDodge(): int;
     public function addDodge(int $dodge): void;
-    public function getAddHidden(): int;
-    public function addAddHidden(int $addHidden): void;
+    public function getBonusHidden(): int;
+    public function addBonusHidden(int $addHidden): void;
 }

@@ -29,7 +29,7 @@ class Defense implements DefenseInterface
     private int $deathMaxResist = 0;
     private int $globalResist = 0;
     private int $dodge = 0;
-    private int $addHidden = 0;
+    private int $bonusHidden = 0;
 
     public function getPhysicalResist(): int
     {
@@ -261,13 +261,13 @@ class Defense implements DefenseInterface
         $this->dodge += $dodge;
     }
 
-    public function getAddHidden(): int
+    public function getBonusHidden(): int
     {
-        return $this->addHidden;
+        return $this->bonusHidden;
     }
 
-    public function addAddHidden(int $addHidden): void
+    public function addBonusHidden(int $addHidden): void
     {
-        $this->addHidden += $addHidden;
+        $this->bonusHidden += $addHidden;
     }
 }

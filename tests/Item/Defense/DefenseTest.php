@@ -36,7 +36,7 @@ class DefenseTest extends TestCase
         self::assertEquals(0, $defense->getDeathMaxResist());
         self::assertEquals(0, $defense->getGlobalResist());
         self::assertEquals(0, $defense->getDodge());
-        self::assertEquals(0, $defense->getAddHidden());
+        self::assertEquals(0, $defense->getBonusHidden());
 
         $physicalResist = 60;
         $fireResist = 61;
@@ -61,7 +61,7 @@ class DefenseTest extends TestCase
         $deathMaxResist = 26;
         $globalResist = 15;
         $dodge = 85;
-        $addHidden = 140;
+        $bonusHidden = 140;
 
         $defense->addPhysicalResist($physicalResist);
         $defense->addFireResist($fireResist);
@@ -86,7 +86,7 @@ class DefenseTest extends TestCase
         $defense->addDeathMaxResist($deathMaxResist);
         $defense->addGlobalResist($globalResist);
         $defense->addDodge($dodge);
-        $defense->addAddHidden($addHidden);
+        $defense->addBonusHidden($bonusHidden);
 
         self::assertEquals($physicalResist, $defense->getPhysicalResist());
         self::assertEquals($fireResist, $defense->getFireResist());
@@ -111,6 +111,6 @@ class DefenseTest extends TestCase
         self::assertEquals($deathMaxResist, $defense->getDeathMaxResist());
         self::assertEquals($globalResist, $defense->getGlobalResist());
         self::assertEquals($dodge, $defense->getDodge());
-        self::assertEquals($addHidden, $defense->getAddHidden());
+        self::assertEquals($bonusHidden, $defense->getBonusHidden());
     }
 }
