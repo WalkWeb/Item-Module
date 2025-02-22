@@ -11,7 +11,9 @@ class BaseTest extends TestCase
 {
     public function testBase(): void
     {
-        $base = new Base();
+        $weight = 1003;
+
+        $base = new Base($weight);
 
         self::assertEquals(0, $base->getStrength());
         self::assertEquals(0, $base->getDexterity());
@@ -21,20 +23,21 @@ class BaseTest extends TestCase
         self::assertEquals(0, $base->getPercipience());
         self::assertEquals(0, $base->getCharisma());
         self::assertEquals(0, $base->getLuck());
-        self::assertEquals(0, $base->getHp());
-        self::assertEquals(0, $base->getIncreaseHp());
+        self::assertEquals(0, $base->getLife());
+        self::assertEquals(0, $base->getIncreaseLife());
         self::assertEquals(0, $base->getMana());
         self::assertEquals(0, $base->getIncreaseMana());
         self::assertEquals(0, $base->getStamina());
         self::assertEquals(0, $base->getMaxHorror());
-        self::assertEquals(0, $base->getHpRegen());
+        self::assertEquals(0, $base->getLifeRegen());
         self::assertEquals(0, $base->getManaRegen());
-        self::assertEquals(0, $base->getAddConcentration());
-        self::assertEquals(0, $base->getAddCunning());
-        self::assertEquals(0, $base->getAddRage());
+        self::assertEquals(0, $base->getBonusConcentration());
+        self::assertEquals(0, $base->getBonusCunning());
+        self::assertEquals(0, $base->getBonusRage());
         self::assertEquals(0, $base->getIncreaseGold());
         self::assertEquals(0, $base->getStaminaCost());
-        self::assertEquals(0, $base->getWeight());
+        self::assertEquals($weight, $base->getWeight());
+        self::assertEquals(0, $base->getBeltSlot());
 
         $strength = 10;
         $dexterity = 11;
@@ -44,20 +47,20 @@ class BaseTest extends TestCase
         $percipience = 15;
         $charisma = 16;
         $luck = 17;
-        $hp = 500;
-        $increaseHp = 50;
+        $life = 500;
+        $increaseLife = 50;
         $mana = 400;
         $increaseMana = 40;
         $stamina = 300;
         $maxHorror = 200;
         $hpRegen = 5;
         $manaRegen = 4;
-        $addConcentration = 50;
-        $addCunning = 55;
-        $addRage = 58;
+        $bonusConcentration = 50;
+        $bonusCunning = 55;
+        $bonusRage = 58;
         $increaseGold = 1001;
         $staminaCost = 1002;
-        $weight = 1003;
+        $beltSlot = 2;
 
         $base->addStrength($strength);
         $base->addDexterity($dexterity);
@@ -67,20 +70,20 @@ class BaseTest extends TestCase
         $base->addPercipience($percipience);
         $base->addCharisma($charisma);
         $base->addLuck($luck);
-        $base->addHp($hp);
-        $base->addIncreaseHp($increaseHp);
+        $base->addLife($life);
+        $base->addIncreaseLife($increaseLife);
         $base->addMana($mana);
         $base->addIncreaseMana($increaseMana);
         $base->addStamina($stamina);
         $base->addMaxHorror($maxHorror);
-        $base->addHpRegen($hpRegen);
+        $base->addLifeRegen($hpRegen);
         $base->addManaRegen($manaRegen);
-        $base->addAddConcentration($addConcentration);
-        $base->addAddCunning($addCunning);
-        $base->addAddRage($addRage);
+        $base->addBonusConcentration($bonusConcentration);
+        $base->addBonusCunning($bonusCunning);
+        $base->addBonusRage($bonusRage);
         $base->addIncreaseGold($increaseGold);
         $base->addStaminaCost($staminaCost);
-        $base->addWeight($weight);
+        $base->addBeltSlot($beltSlot);
 
         self::assertEquals($strength, $base->getStrength());
         self::assertEquals($dexterity, $base->getDexterity());
@@ -90,19 +93,19 @@ class BaseTest extends TestCase
         self::assertEquals($percipience, $base->getPercipience());
         self::assertEquals($charisma, $base->getCharisma());
         self::assertEquals($luck, $base->getLuck());
-        self::assertEquals($hp, $base->getHp());
-        self::assertEquals($increaseHp, $base->getIncreaseHp());
+        self::assertEquals($life, $base->getLife());
+        self::assertEquals($increaseLife, $base->getIncreaseLife());
         self::assertEquals($mana, $base->getMana());
         self::assertEquals($increaseMana, $base->getIncreaseMana());
         self::assertEquals($stamina, $base->getStamina());
         self::assertEquals($maxHorror, $base->getMaxHorror());
-        self::assertEquals($hpRegen, $base->getHpRegen());
+        self::assertEquals($hpRegen, $base->getLifeRegen());
         self::assertEquals($manaRegen, $base->getManaRegen());
-        self::assertEquals($addConcentration, $base->getAddConcentration());
-        self::assertEquals($addCunning, $base->getAddCunning());
-        self::assertEquals($addRage, $base->getAddRage());
+        self::assertEquals($bonusConcentration, $base->getBonusConcentration());
+        self::assertEquals($bonusCunning, $base->getBonusCunning());
+        self::assertEquals($bonusRage, $base->getBonusRage());
         self::assertEquals($increaseGold, $base->getIncreaseGold());
         self::assertEquals($staminaCost, $base->getStaminaCost());
-        self::assertEquals($weight, $base->getWeight());
+        self::assertEquals($beltSlot, $base->getBeltSlot());
     }
 }

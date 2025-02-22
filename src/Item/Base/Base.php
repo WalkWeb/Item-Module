@@ -6,6 +6,7 @@ namespace Item\Base;
 
 class Base implements BaseInterface
 {
+    private int $weight;
     private int $strength = 0;
     private int $dexterity = 0;
     private int $intelligence = 0;
@@ -14,20 +15,30 @@ class Base implements BaseInterface
     private int $percipience = 0;
     private int $charisma = 0;
     private int $luck = 0;
-    private int $hp = 0; // todo life
-    private int $increaseHp = 0; // todo increasedLife
+    private int $life = 0;
+    private int $increaseLife = 0;
     private int $mana = 0;
     private int $increaseMana = 0;
     private int $stamina = 0;
     private int $maxHorror = 0;
-    private int $hpRegen = 0;
+    private int $lifeRegen = 0;
     private int $manaRegen = 0;
-    private int $addConcentration = 0;
-    private int $addCunning = 0;
-    private int $addRage = 0;
+    private int $bonusConcentration = 0;
+    private int $bonusCunning = 0;
+    private int $bonusRage = 0;
     private int $increaseGold = 0;
     private int $staminaCost = 0;
-    private int $weight = 0;
+    private int $beltSlot = 0;
+
+    public function __construct(int $weight)
+    {
+        $this->weight = $weight;
+    }
+
+    public function getWeight(): int
+    {
+        return $this->weight;
+    }
 
     public function getStrength(): int
     {
@@ -109,24 +120,24 @@ class Base implements BaseInterface
         $this->luck += $luck;
     }
 
-    public function getHp(): int
+    public function getLife(): int
     {
-        return $this->hp;
+        return $this->life;
     }
 
-    public function addHp(int $hp): void
+    public function addLife(int $hp): void
     {
-        $this->hp += $hp;
+        $this->life += $hp;
     }
 
-    public function getIncreaseHp(): int
+    public function getIncreaseLife(): int
     {
-        return $this->increaseHp;
+        return $this->increaseLife;
     }
 
-    public function addIncreaseHp(int $increaseHp): void
+    public function addIncreaseLife(int $increaseHp): void
     {
-        $this->increaseHp += $increaseHp;
+        $this->increaseLife += $increaseHp;
     }
 
     public function getMana(): int
@@ -169,14 +180,14 @@ class Base implements BaseInterface
         $this->maxHorror += $maxHorror;
     }
 
-    public function getHpRegen(): int
+    public function getLifeRegen(): int
     {
-        return $this->hpRegen;
+        return $this->lifeRegen;
     }
 
-    public function addHpRegen(int $hpRegen): void
+    public function addLifeRegen(int $hpRegen): void
     {
-        $this->hpRegen += $hpRegen;
+        $this->lifeRegen += $hpRegen;
     }
 
     public function getManaRegen(): int
@@ -189,34 +200,34 @@ class Base implements BaseInterface
         $this->manaRegen += $manaRegen;
     }
 
-    public function getAddConcentration(): int
+    public function getBonusConcentration(): int
     {
-        return $this->addConcentration;
+        return $this->bonusConcentration;
     }
 
-    public function addAddConcentration(int $addConcentration): void
+    public function addBonusConcentration(int $bonusConcentration): void
     {
-        $this->addConcentration += $addConcentration;
+        $this->bonusConcentration += $bonusConcentration;
     }
 
-    public function getAddCunning(): int
+    public function getBonusCunning(): int
     {
-        return $this->addCunning;
+        return $this->bonusCunning;
     }
 
-    public function addAddCunning(int $addCunning): void
+    public function addBonusCunning(int $bonusCunning): void
     {
-        $this->addCunning += $addCunning;
+        $this->bonusCunning += $bonusCunning;
     }
 
-    public function getAddRage(): int
+    public function getBonusRage(): int
     {
-        return $this->addRage;
+        return $this->bonusRage;
     }
 
-    public function addAddRage(int $addRage): void
+    public function addBonusRage(int $bonusRage): void
     {
-        $this->addRage += $addRage;
+        $this->bonusRage += $bonusRage;
     }
 
     public function getIncreaseGold(): int
@@ -239,13 +250,13 @@ class Base implements BaseInterface
         $this->staminaCost += $staminaCost;
     }
 
-    public function getWeight(): int
+    public function getBeltSlot(): int
     {
-        return $this->weight;
+        return $this->beltSlot;
     }
 
-    public function addWeight(int $weight): void
+    public function addBeltSlot(int $beltSlot): void
     {
-        $this->weight += $weight;
+        $this->beltSlot += $beltSlot;
     }
 }

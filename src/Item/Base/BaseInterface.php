@@ -6,6 +6,7 @@ namespace Item\Base;
 
 interface BaseInterface
 {
+    public function getWeight(): int;
     public function getStrength(): int;
     public function addStrength(int $strength): void;
     public function getDexterity(): int;
@@ -22,10 +23,10 @@ interface BaseInterface
     public function addCharisma(int $charisma): void;
     public function getLuck(): int;
     public function addLuck(int $luck): void;
-    public function getHp(): int;
-    public function addHp(int $hp): void;
-    public function getIncreaseHp(): int;
-    public function addIncreaseHp(int $increaseHp): void;
+    public function getLife(): int;
+    public function addLife(int $hp): void;
+    public function getIncreaseLife(): int;
+    public function addIncreaseLife(int $increaseHp): void;
     public function getMana(): int;
     public function addMana(int $mana): void;
     public function getIncreaseMana(): int;
@@ -34,20 +35,20 @@ interface BaseInterface
     public function addStamina(int $stamina): void;
     public function getMaxHorror(): int;
     public function addMaxHorror(int $horror): void;
-    public function getHpRegen(): int;
-    public function addHpRegen(int $hpRegen): void;
+    public function getLifeRegen(): int;
+    public function addLifeRegen(int $hpRegen): void;
     public function getManaRegen(): int;
     public function addManaRegen(int $manaRegen): void;
-    public function getAddConcentration(): int;
-    public function addAddConcentration(int $addConcentration): void;
-    public function getAddCunning(): int;
-    public function addAddCunning(int $addCunning): void;
-    public function getAddRage(): int;
-    public function addAddRage(int $addRage): void;
+    public function getBonusConcentration(): int;
+    public function addBonusConcentration(int $bonusConcentration): void;
+    public function getBonusCunning(): int;
+    public function addBonusCunning(int $bonusCunning): void;
+    public function getBonusRage(): int;
+    public function addBonusRage(int $bonusRage): void;
     public function getIncreaseGold(): int;
     public function addIncreaseGold(int $increaseGold): void;
     public function getStaminaCost(): int;
     public function addStaminaCost(int $staminaCost): void;
-    public function getWeight(): int;
-    public function addWeight(int $weight): void;
+    public function getBeltSlot(): int;
+    public function addBeltSlot(int $beltSlot): void;
 }
