@@ -91,4 +91,38 @@ trait ValidationTrait
 
         return $data[$field];
     }
+
+    /**
+     * @param array $data
+     * @param string $field
+     * @param string $error
+     * @return array
+     * @throws ItemException
+     */
+    protected static function array(array $data, string $field, string $error): array
+    {
+        if (!array_key_exists($field, $data) || !is_array($data[$field])) {
+            throw new ItemException($error);
+        }
+
+        return $data[$field];
+    }
+
+    /**
+     * @param array $data
+     * @param string $field
+     * @param string $error
+     * @return string
+     * @throws ItemException
+     */
+    protected static function stat(array $data, string $field, string $error): string
+    {
+        $name = self::string($data, $field, $error);
+
+        if (count(explode('.', $name)) !== 2) {
+            throw new ItemException($error);
+        }
+
+        return $name;
+    }
 }

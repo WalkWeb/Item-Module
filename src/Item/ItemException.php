@@ -19,6 +19,7 @@ class ItemException extends Exception
     public const UNKNOWN_MAGIC_TYPE         = 'Unknown magic type';
     public const UNKNOWN_MAGIC_QUALITY_TYPE = 'Unknown magic quality type';
     public const UNKNOWN_QUALITY_TYPE       = 'Unknown quality type';
+    public const UNKNOWN_AFFIX_TYPE         = 'Unknown affix type';
     public const UNKNOWN_DAMAGE_TYPE        = 'Unknown damage type';
     public const UNKNOWN_MATERIAL_ELEMENT   = 'Unknown material element';
 }
