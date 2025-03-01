@@ -27,6 +27,7 @@ class StatCollectionFactoryTest extends TestCase
             self::assertEquals($data[$i]['name'], $stat->getName());
             self::assertEquals($data[$i]['value'], $stat->getValue());
             self::assertEquals($data[$i]['quality'], $stat->isQuality());
+            self::assertEquals($data[$i]['prefix'], $stat->getPrefix());
             self::assertEquals($data[$i]['suffix'], $stat->getSuffix());
             $i++;
         }
@@ -55,15 +56,17 @@ class StatCollectionFactoryTest extends TestCase
             [
                 [
                     [
-                        'name'    => 'name-1',
+                        'name'    => 'offense.criticalChance',
                         'value'   => 10,
                         'quality' => true,
+                        'prefix'  => '',
                         'suffix'  => '%',
                     ],
                     [
-                        'name'    => 'name-2',
-                        'value'   => 1.2,
+                        'name'    => 'offense.attackSpeed',
+                        'value'   => 120,
                         'quality' => true,
+                        'prefix'  => '+',
                         'suffix'  => '',
                     ],
                 ],
@@ -81,15 +84,17 @@ class StatCollectionFactoryTest extends TestCase
             [
                 [
                     [
-                        'name'    => 'name-1',
+                        'name'    => 'offense.criticalChance',
                         'value'   => 10,
                         'quality' => true,
+                        'prefix'  => '',
                         'suffix'  => '%',
                     ],
                     [
-                        'name'    => 'name-1',
-                        'value'   => 1.2,
+                        'name'    => 'offense.criticalChance',
+                        'value'   => 120,
                         'quality' => true,
+                        'prefix'  => '',
                         'suffix'  => '',
                     ],
                 ],
@@ -99,9 +104,10 @@ class StatCollectionFactoryTest extends TestCase
             [
                 [
                     [
-                        'name'    => 'name-1',
+                        'name'    => 'offense.criticalChance',
                         'value'   => 10,
                         'quality' => true,
+                        'prefix'  => '',
                         'suffix'  => '%',
                     ],
                     'string data',

@@ -6,23 +6,9 @@ namespace Item\Drawing\Stat;
 
 interface StatInterface
 {
-    /**
-     * @return string
-     */
     public function getName(): string;
-
-    /**
-     * @return int|float
-     */
-    public function getValue();
-
-    /**
-     * @return bool
-     */
+    public function getValue(): int;
     public function isQuality(): bool;
-
-    /**
-     * @return string
-     */
+    public function getPrefix(): string;
     public function getSuffix(): string;
 }

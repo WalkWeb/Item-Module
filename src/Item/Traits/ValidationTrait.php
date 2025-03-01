@@ -80,22 +80,6 @@ trait ValidationTrait
      * @param array $data
      * @param string $field
      * @param string $error
-     * @return float|int
-     * @throws ItemException
-     */
-    protected static function intOrFloat(array $data, string $field, string $error)
-    {
-        if (!array_key_exists($field, $data) || (!is_float($data[$field]) && !is_int($data[$field]))) {
-            throw new ItemException($error);
-        }
-
-        return $data[$field];
-    }
-
-    /**
-     * @param array $data
-     * @param string $field
-     * @param string $error
      * @return array
      * @throws ItemException
      */

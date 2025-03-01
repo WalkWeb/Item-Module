@@ -23,6 +23,7 @@ class StatFactoryTest extends TestCase
         self::assertEquals($data['name'], $stat->getName());
         self::assertEquals($data['value'], $stat->getValue());
         self::assertEquals($data['quality'], $stat->isQuality());
+        self::assertEquals($data['prefix'], $stat->getPrefix());
         self::assertEquals($data['suffix'], $stat->getSuffix());
     }
 
@@ -46,17 +47,19 @@ class StatFactoryTest extends TestCase
         return [
             [
                 [
-                    'name'    => 'name',
+                    'name'    => 'offense.criticalChance',
                     'value'   => 10,
                     'quality' => true,
+                    'prefix'  => '',
                     'suffix'  => '%',
                 ],
             ],
             [
                 [
-                    'name'    => 'name',
-                    'value'   => 1.2,
+                    'name'    => 'offense.attackSpeed',
+                    'value'   => 120,
                     'quality' => true,
+                    'prefix'  => '+',
                     'suffix'  => '',
                 ],
             ],
@@ -74,6 +77,7 @@ class StatFactoryTest extends TestCase
                 [
                     'value'   => 10,
                     'quality' => true,
+                    'prefix'  => '',
                     'suffix'  => '%',
                 ],
                 StatException::INVALID_NAME,
@@ -84,6 +88,18 @@ class StatFactoryTest extends TestCase
                     'name'    => null,
                     'value'   => 10,
                     'quality' => true,
+                    'prefix'  => '',
+                    'suffix'  => '%',
+                ],
+                StatException::INVALID_NAME,
+            ],
+            // name invalid value
+            [
+                [
+                    'name'    => 'name',
+                    'value'   => 10,
+                    'quality' => true,
+                    'prefix'  => '',
                     'suffix'  => '%',
                 ],
                 StatException::INVALID_NAME,
@@ -91,8 +107,9 @@ class StatFactoryTest extends TestCase
             // miss value
             [
                 [
-                    'name'    => 'name',
+                    'name'    => 'offense.attackSpeed',
                     'quality' => true,
+                    'prefix'  => '',
                     'suffix'  => '%',
                 ],
                 StatException::INVALID_VALUE,
@@ -100,9 +117,10 @@ class StatFactoryTest extends TestCase
             // value invalid type
             [
                 [
-                    'name'    => 'name',
+                    'name'    => 'offense.attackSpeed',
                     'value'   => '10.5',
                     'quality' => true,
+                    'prefix'  => '',
                     'suffix'  => '%',
                 ],
                 StatException::INVALID_VALUE,
@@ -110,38 +128,63 @@ class StatFactoryTest extends TestCase
             // miss quality
             [
                 [
-                    'name'    => 'name',
-                    'value'   => 10,
-                    'suffix'  => '%',
+                    'name'   => 'offense.attackSpeed',
+                    'value'  => 10,
+                    'prefix'  => '',
+                    'suffix' => '%',
                 ],
                 StatException::INVALID_QUALITY,
             ],
             // quality invalid type
             [
                 [
-                    'name'    => 'name',
+                    'name'    => 'offense.attackSpeed',
                     'value'   => 10,
                     'quality' => 1,
+                    'prefix'  => '',
                     'suffix'  => '%',
                 ],
                 StatException::INVALID_QUALITY,
             ],
+            // miss prefix
+            [
+                [
+                    'name'    => 'offense.attackSpeed',
+                    'value'   => 120,
+                    'quality' => true,
+                    'suffix'  => '',
+                ],
+                StatException::INVALID_PREFIX,
+            ],
+            // prefix invalid type
+            [
+                [
+                    'name'    => 'offense.attackSpeed',
+                    'value'   => 120,
+                    'quality' => true,
+                    'prefix'  => 123,
+                    'suffix'  => '',
+                ],
+                StatException::INVALID_PREFIX,
+            ],
             // miss suffix
             [
                 [
-                    'name'    => 'name',
+                    'name'    => 'offense.attackSpeed',
                     'value'   => 10,
                     'quality' => true,
+                    'prefix'  => '',
                 ],
                 StatException::INVALID_SUFFIX,
             ],
             // suffix invalid type
             [
                 [
-                    'name'    => 'name',
+                    'name'    => 'offense.attackSpeed',
                     'value'   => 10,
                     'quality' => true,
                     'suffix'  => [],
+                    'prefix'  => '',
                 ],
                 StatException::INVALID_SUFFIX,
             ],

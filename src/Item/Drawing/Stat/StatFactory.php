@@ -19,9 +19,10 @@ class StatFactory
     public static function create(array $data): StatInterface
     {
         return new Stat(
-            self::string($data, 'name', StatException::INVALID_NAME),
-            self::intOrFloat($data, 'value', StatException::INVALID_VALUE),
+            self::stat($data, 'name', StatException::INVALID_NAME),
+            self::int($data, 'value', StatException::INVALID_VALUE),
             self::bool($data, 'quality', StatException::INVALID_QUALITY),
+            self::string($data, 'prefix', StatException::INVALID_PREFIX),
             self::string($data, 'suffix', StatException::INVALID_SUFFIX),
         );
     }

@@ -7,15 +7,17 @@ namespace Item\Drawing\Stat;
 class Stat implements StatInterface
 {
     private string $name;
-    private $value;
+    private int $value;
     private bool $quality;
+    private string $prefix;
     private string $suffix;
 
-    public function __construct(string $name, $value, bool $quality, string $suffix)
+    public function __construct(string $name, int $value, bool $quality, string $prefix, string $suffix)
     {
         $this->name = $name;
         $this->value = $value;
         $this->quality = $quality;
+        $this->prefix = $prefix;
         $this->suffix = $suffix;
     }
 
@@ -28,9 +30,9 @@ class Stat implements StatInterface
     }
 
     /**
-     * @return float|int
+     * @return int
      */
-    public function getValue()
+    public function getValue(): int
     {
         return $this->value;
     }
@@ -41,6 +43,14 @@ class Stat implements StatInterface
     public function isQuality(): bool
     {
         return $this->quality;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrefix(): string
+    {
+        return $this->prefix;
     }
 
     /**
