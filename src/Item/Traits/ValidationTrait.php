@@ -28,6 +28,22 @@ trait ValidationTrait
      * @param array $data
      * @param string $field
      * @param string $error
+     * @return float
+     * @throws ItemException
+     */
+    protected static function float(array $data, string $field, string $error): float
+    {
+        if (!array_key_exists($field, $data) || !is_float($data[$field])) {
+            throw new ItemException($error);
+        }
+
+        return $data[$field];
+    }
+
+    /**
+     * @param array $data
+     * @param string $field
+     * @param string $error
      * @return int|null
      * @throws ItemException
      */
