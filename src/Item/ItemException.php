@@ -22,4 +22,6 @@ class ItemException extends Exception
     public const UNKNOWN_AFFIX_TYPE         = 'Unknown affix type';
     public const UNKNOWN_DAMAGE_TYPE        = 'Unknown damage type';
     public const UNKNOWN_MATERIAL_ELEMENT   = 'Unknown material element';
+
+    public const METHOD_NOT_FOUND           = 'Method not found';
 }

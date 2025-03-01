@@ -16,6 +16,7 @@
     "phpunit/phpunit": "^9.6"
   },
   "require": {
-    "ext-mbstring": "*"
+    "ext-mbstring": "*",
+    "ramsey/uuid": "^4.2"
   }
 }
