@@ -24,4 +24,5 @@ class ItemException extends Exception
     public const UNKNOWN_MATERIAL_ELEMENT   = 'Unknown material element';
 
     public const METHOD_NOT_FOUND           = 'Method not found';
+    public const INVALID_FILTER             = 'Item level cannot be less than 1';
 }
