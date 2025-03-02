@@ -8,6 +8,9 @@ use Exception;
 
 class DrawingException extends Exception
 {
+    public const EXPECTED_ARRAY           = 'Drawing: expected array data';
+    public const ALREADY_EXIST            = 'DrawingCollection: stat to be added already exists';
+
     public const INVALID_ID               = 'Incorrect parameter "id", it required and type int';
     public const INVALID_NAME             = 'Incorrect parameter "name", it required and type string';
     public const INVALID_ICON             = 'Incorrect parameter "icon", it required and type string';
