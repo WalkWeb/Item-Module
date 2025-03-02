@@ -64,6 +64,30 @@ trait ValidationTrait
      * @param array $data
      * @param string $field
      * @param string $error
+     * @return int|null
+     * @throws ItemException
+     */
+    protected static function intOrNullOrMiss(array $data, string $field, string $error): ?int
+    {
+        if (!array_key_exists($field, $data)) {
+            return null;
+        }
+
+        if (is_int($data[$field])) {
+            return $data[$field];
+        }
+
+        if ($data[$field] === null) {
+            return null;
+        }
+
+        throw new ItemException($error);
+    }
+
+    /**
+     * @param array $data
+     * @param string $field
+     * @param string $error
      * @return string
      * @throws ItemException
      */

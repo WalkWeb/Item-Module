@@ -122,17 +122,14 @@ class MetalTest extends TestCase
             'gender_type_id'   => GenderTypeInterface::FEMALE,
             'weight'           => 25,
             'min_level'        => 1,
+            'strength'         => 0.0,
+            'intelligence'     => 1.0,
+            'dexterity'        => 0.0,
             'affix_exception'  => [
                 AffixTypeInterface::ADD_DEFENSE,
                 AffixTypeInterface::INCREASE_DEFENSE,
             ],
             'stats'            => [],
-            'min_strength'     => 50,
-            'min_dexterity'    => 30,
-            'min_intelligence' => 10,
-            'weapon_type_id'   => null,
-            'potion_type_id'   => null,
-            'price'            => 100,
         ]), 1));
 
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
@@ -148,14 +145,11 @@ class MetalTest extends TestCase
             'gender_type_id'   => GenderTypeInterface::MALE,
             'weight'           => 90,
             'min_level'        => 1,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 1.0,
             'affix_exception'  => [],
             'stats'            => [],
-            'min_strength'     => 50,
-            'min_dexterity'    => 30,
-            'min_intelligence' => 10,
-            'weapon_type_id'   => null,
-            'potion_type_id'   => null,
-            'price'            => 100,
         ]), 1));
 
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
@@ -171,14 +165,11 @@ class MetalTest extends TestCase
             'gender_type_id'   => GenderTypeInterface::FEMALE,
             'weight'           => 170,
             'min_level'        => 1,
+            'strength'         => 0.6,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.6,
             'affix_exception'  => [],
             'stats'            => [],
-            'min_strength'     => 50,
-            'min_dexterity'    => 30,
-            'min_intelligence' => 10,
-            'weapon_type_id'   => null,
-            'potion_type_id'   => null,
-            'price'            => 100,
         ]), 1));
 
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
@@ -194,12 +185,9 @@ class MetalTest extends TestCase
             'gender_type_id'   => GenderTypeInterface::MALE,
             'weight'           => 105,
             'min_level'        => 1,
-            'min_strength'     => 50,
-            'min_dexterity'    => 30,
-            'min_intelligence' => 10,
-            'potion_type_id'   => null,
-            'price'            => 100,
-            'armor_type_id'    => null,
+            'strength'         => 0.0,
+            'intelligence'     => 1.0,
+            'dexterity'        => 0.0,
             'affix_exception'  => [
                 AffixTypeInterface::INCREASE_ATTACK_SPEED,
                 AffixTypeInterface::INCREASE_ACCURACY,

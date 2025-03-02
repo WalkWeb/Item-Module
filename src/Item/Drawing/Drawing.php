@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Item\Drawing;
 
+use Item\Drawing\Stat\StatCollection;
 use Item\Type\Armor\ArmorTypeInterface;
+use Item\Type\Damage\DamageTypeInterface;
 use Item\Type\Equip\EquipTypeInterface;
 use Item\Type\Gender\GenderTypeInterface;
 use Item\Type\ItemTypeInterface;
+use Item\Type\Magic\MagicTypeInterface;
 use Item\Type\Material\MaterialTypeInterface;
 use Item\Type\Potion\PotionTypeInterface;
 use Item\Type\Section\SectionTypeInterface;
@@ -19,54 +22,74 @@ class Drawing implements DrawingInterface
     private string $name;
     private string $icon;
     private int $price;
+    private int $weight;
     private int $minLevel;
-    private int $minStrength;
-    private int $minDexterity;
-    private int $minIntelligence;
+    private float $strength;
+    private float $dexterity;
+    private float $intelligence;
+    private array $affixException;
+    private bool $twoHand = false;
+    private StatCollection $stats;
     private ItemTypeInterface $type;
     private ?EquipTypeInterface $equipType;
     private ?SectionTypeInterface $sectionType;
     private ?WeaponTypeInterface $weaponType;
+    private ?DamageTypeInterface $damageType;
     private ?ArmorTypeInterface $armorType;
     private ?PotionTypeInterface $potionType;
     private ?MaterialTypeInterface $materialType;
     private ?GenderTypeInterface $genderType;
+    private ?MagicTypeInterface $magicType;
 
     public function __construct(
         int $id,
         string $name,
         string $icon,
         int $price,
+        int $weight,
         int $minLevel,
-        int $minStrength,
-        int $minDexterity,
-        int $minIntelligence,
+        float $strength,
+        float $dexterity,
+        float $intelligence,
+        array $affixException,
+        StatCollection $stats,
         ItemTypeInterface $type,
         ?EquipTypeInterface $equipType,
         ?SectionTypeInterface $sectionType,
         ?WeaponTypeInterface $weaponType,
+        ?DamageTypeInterface $damageType,
         ?ArmorTypeInterface $armorType,
         ?PotionTypeInterface $potionType,
         ?MaterialTypeInterface $materialType,
-        ?GenderTypeInterface $genderType
+        ?GenderTypeInterface $genderType,
+        ?MagicTypeInterface $magicType
     )
     {
         $this->id = $id;
         $this->name = $name;
         $this->icon = $icon;
         $this->price = $price;
+        $this->weight = $weight;
         $this->minLevel = $minLevel;
-        $this->minStrength = $minStrength;
-        $this->minDexterity = $minDexterity;
-        $this->minIntelligence = $minIntelligence;
+        $this->strength = $strength;
+        $this->dexterity = $dexterity;
+        $this->intelligence = $intelligence;
+        $this->affixException = $affixException;
+        $this->stats = $stats;
         $this->type = $type;
         $this->equipType = $equipType;
         $this->sectionType = $sectionType;
         $this->weaponType = $weaponType;
+        $this->damageType = $damageType;
         $this->armorType = $armorType;
         $this->potionType = $potionType;
         $this->materialType = $materialType;
         $this->genderType = $genderType;
+        $this->magicType = $magicType;
+
+        if ($this->equipType && $this->equipType->getId() === EquipTypeInterface::TWO_HAND) {
+            $this->twoHand = true;
+        }
     }
 
     /**
@@ -104,33 +127,73 @@ class Drawing implements DrawingInterface
     /**
      * @return int
      */
+    public function getWeight(): int
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @return int
+     */
     public function getMinLevel(): int
     {
         return $this->minLevel;
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMinStrength(): int
+    public function getStrength(): float
     {
-        return $this->minStrength;
+        return $this->strength;
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMinDexterity(): int
+    public function getDexterity(): float
     {
-        return $this->minDexterity;
+        return $this->dexterity;
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getMinIntelligence(): int
+    public function getIntelligence(): float
     {
-        return $this->minIntelligence;
+        return $this->intelligence;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAffixException(): array
+    {
+        return $this->affixException;
+    }
+
+    /**
+     * @param array $affixExceptions
+     */
+    public function addAffixException(array $affixExceptions): void
+    {
+        $this->affixException = array_merge($this->affixException, $affixExceptions);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTwoHand(): bool
+    {
+        return $this->twoHand;
+    }
+
+    /**
+     * @return StatCollection
+     */
+    public function getStats(): StatCollection
+    {
+        return $this->stats;
     }
 
     /**
@@ -166,6 +229,14 @@ class Drawing implements DrawingInterface
     }
 
     /**
+     * @return DamageTypeInterface|null
+     */
+    public function getDamageType(): ?DamageTypeInterface
+    {
+        return $this->damageType;
+    }
+
+    /**
      * @return ArmorTypeInterface|null
      */
     public function getArmorType(): ?ArmorTypeInterface
@@ -195,5 +266,13 @@ class Drawing implements DrawingInterface
     public function getGenderType(): ?GenderTypeInterface
     {
         return $this->genderType;
+    }
+
+    /**
+     * @return MagicTypeInterface|null
+     */
+    public function getMagicType(): ?MagicTypeInterface
+    {
+        return $this->magicType;
     }
 }

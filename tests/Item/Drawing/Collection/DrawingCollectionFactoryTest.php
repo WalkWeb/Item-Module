@@ -7,11 +7,9 @@ namespace Tests\Item\Drawing\Collection;
 use Item\Drawing\Collection\DrawingCollectionFactory;
 use Item\Drawing\DrawingException;
 use Item\ItemException;
-use Item\Type\Equip\EquipTypeInterface;
-use Item\Type\Gender\GenderTypeInterface;
 use Item\Type\ItemTypeInterface;
-use Item\Type\Section\SectionTypeInterface;
-use Item\Type\Weapon\WeaponTypeInterface;
+use Item\Type\Material\MaterialTypeInterface;
+use Item\Type\Potion\PotionTypeInterface;
 use PHPUnit\Framework\TestCase;
 
 class DrawingCollectionFactoryTest extends TestCase
@@ -32,8 +30,14 @@ class DrawingCollectionFactoryTest extends TestCase
             self::assertEquals($data[$i]['id'], $drawing->getId());
             self::assertEquals($data[$i]['name'], $drawing->getName());
             self::assertEquals($data[$i]['icon'], $drawing->getIcon());
+            self::assertEquals($data[$i]['weight'], $drawing->getWeight());
             self::assertEquals($data[$i]['min_level'], $drawing->getMinLevel());
+            self::assertEquals($data[$i]['strength'], $drawing->getStrength());
+            self::assertEquals($data[$i]['dexterity'], $drawing->getDexterity());
+            self::assertEquals($data[$i]['intelligence'], $drawing->getIntelligence());
+            self::assertEquals($data[$i]['affix_exception'], $drawing->getAffixException());
             self::assertEquals($data[$i]['type_id'], $drawing->getType()->getId());
+            self::assertSameSize($data[$i]['stats'], $drawing->getStats());
 
             $i++;
         }
@@ -61,40 +65,47 @@ class DrawingCollectionFactoryTest extends TestCase
             [
                 [
                     [
-                        'id'               => 143,
-                        'name'             => 'Sword',
+                        'id'               => 28,
+                        'name'             => 'Heal Potion',
                         'icon'             => 'icon.png',
-                        'price'            => 1000,
-                        'min_level'        => 4,
-                        'min_strength'     => 25,
-                        'min_dexterity'    => 12,
-                        'min_intelligence' => 0,
-                        'type_id'          => ItemTypeInterface::EQUIP,
-                        'equip_type_id'    => EquipTypeInterface::ONE_HAND,
-                        'section_type_id'  => SectionTypeInterface::RIGHT_HAND,
-                        'weapon_type_id'   => WeaponTypeInterface::SWORD,
+                        'weight'           => 10,
+                        'min_level'        => 15,
+                        'strength'         => 0.0,
+                        'dexterity'        => 0.0,
+                        'intelligence'     => 0.0,
+                        'affix_exception'  => [],
+                        'type_id'          => ItemTypeInterface::POTION,
+                        'equip_type_id'    => null,
+                        'section_type_id'  => null,
+                        'weapon_type_id'   => null,
                         'armor_type_id'    => null,
-                        'potion_type_id'   => null,
+                        'potion_type_id'   => PotionTypeInterface::LIFE,
                         'material_type_id' => null,
-                        'gender_type_id'   => GenderTypeInterface::MALE,
+                        'gender_type_id'   => null,
+                        'magic_type_id'    => null,
+                        'stats'            => [],
                     ],
                     [
-                        'id'               => 432,
-                        'name'             => 'Staff',
+                        'id'               => 31,
+                        'name'             => 'Steel',
                         'icon'             => 'icon.png',
-                        'price'            => 2000,
-                        'min_level'        => 4,
-                        'min_strength'     => 0,
-                        'min_dexterity'    => 0,
-                        'min_intelligence' => 20,
-                        'type_id'          => ItemTypeInterface::EQUIP,
-                        'equip_type_id'    => EquipTypeInterface::TWO_HAND,
-                        'section_type_id'  => SectionTypeInterface::RIGHT_HAND,
-                        'weapon_type_id'   => WeaponTypeInterface::STAFF,
+                        'price'            => 250,
+                        'weight'           => 25,
+                        'min_level'        => 1,
+                        'strength'         => 0.0,
+                        'dexterity'        => 0.0,
+                        'intelligence'     => 0.0,
+                        'affix_exception'  => [],
+                        'type_id'          => ItemTypeInterface::MATERIAL,
+                        'equip_type_id'    => null,
+                        'section_type_id'  => null,
+                        'weapon_type_id'   => null,
                         'armor_type_id'    => null,
                         'potion_type_id'   => null,
-                        'material_type_id' => null,
-                        'gender_type_id'   => GenderTypeInterface::MALE,
+                        'material_type_id' => MaterialTypeInterface::METAL,
+                        'gender_type_id'   => null,
+                        'magic_type_id'    => null,
+                        'stats'            => [],
                     ],
                 ],
             ],
@@ -111,40 +122,47 @@ class DrawingCollectionFactoryTest extends TestCase
             [
                 [
                     [
-                        'id'               => 143,
-                        'name'             => 'Sword',
+                        'id'               => 28,
+                        'name'             => 'Heal Potion',
                         'icon'             => 'icon.png',
-                        'price'            => 1000,
-                        'min_level'        => 4,
-                        'min_strength'     => 25,
-                        'min_dexterity'    => 12,
-                        'min_intelligence' => 0,
-                        'type_id'          => ItemTypeInterface::EQUIP,
-                        'equip_type_id'    => EquipTypeInterface::ONE_HAND,
-                        'section_type_id'  => SectionTypeInterface::RIGHT_HAND,
-                        'weapon_type_id'   => WeaponTypeInterface::SWORD,
+                        'weight'           => 10,
+                        'min_level'        => 15,
+                        'strength'         => 0.0,
+                        'dexterity'        => 0.0,
+                        'intelligence'     => 0.0,
+                        'affix_exception'  => [],
+                        'type_id'          => ItemTypeInterface::POTION,
+                        'equip_type_id'    => null,
+                        'section_type_id'  => null,
+                        'weapon_type_id'   => null,
                         'armor_type_id'    => null,
-                        'potion_type_id'   => null,
+                        'potion_type_id'   => PotionTypeInterface::LIFE,
                         'material_type_id' => null,
-                        'gender_type_id'   => GenderTypeInterface::MALE,
+                        'gender_type_id'   => null,
+                        'magic_type_id'    => null,
+                        'stats'            => [],
                     ],
                     [
-                        'id'               => 143,
-                        'name'             => 'Sword',
+                        'id'               => 28,
+                        'name'             => 'Steel',
                         'icon'             => 'icon.png',
-                        'price'            => 1000,
-                        'min_level'        => 4,
-                        'min_strength'     => 25,
-                        'min_dexterity'    => 12,
-                        'min_intelligence' => 0,
-                        'type_id'          => ItemTypeInterface::EQUIP,
-                        'equip_type_id'    => EquipTypeInterface::ONE_HAND,
-                        'section_type_id'  => SectionTypeInterface::RIGHT_HAND,
-                        'weapon_type_id'   => WeaponTypeInterface::SWORD,
+                        'price'            => 250,
+                        'weight'           => 25,
+                        'min_level'        => 1,
+                        'strength'         => 0.0,
+                        'dexterity'        => 0.0,
+                        'intelligence'     => 0.0,
+                        'affix_exception'  => [],
+                        'type_id'          => ItemTypeInterface::MATERIAL,
+                        'equip_type_id'    => null,
+                        'section_type_id'  => null,
+                        'weapon_type_id'   => null,
                         'armor_type_id'    => null,
                         'potion_type_id'   => null,
-                        'material_type_id' => null,
-                        'gender_type_id'   => GenderTypeInterface::MALE,
+                        'material_type_id' => MaterialTypeInterface::METAL,
+                        'gender_type_id'   => null,
+                        'magic_type_id'    => null,
+                        'stats'            => [],
                     ],
                 ],
                 DrawingException::ALREADY_EXIST,
@@ -153,22 +171,25 @@ class DrawingCollectionFactoryTest extends TestCase
             [
                 [
                     [
-                        'id'               => 143,
-                        'name'             => 'Sword',
+                        'id'               => 28,
+                        'name'             => 'Heal Potion',
                         'icon'             => 'icon.png',
-                        'price'            => 1000,
-                        'min_level'        => 4,
-                        'min_strength'     => 25,
-                        'min_dexterity'    => 12,
-                        'min_intelligence' => 0,
-                        'type_id'          => ItemTypeInterface::EQUIP,
-                        'equip_type_id'    => EquipTypeInterface::ONE_HAND,
-                        'section_type_id'  => SectionTypeInterface::RIGHT_HAND,
-                        'weapon_type_id'   => WeaponTypeInterface::SWORD,
+                        'weight'           => 10,
+                        'min_level'        => 15,
+                        'strength'         => 0.0,
+                        'dexterity'        => 0.0,
+                        'intelligence'     => 0.0,
+                        'affix_exception'  => [],
+                        'type_id'          => ItemTypeInterface::POTION,
+                        'equip_type_id'    => null,
+                        'section_type_id'  => null,
+                        'weapon_type_id'   => null,
                         'armor_type_id'    => null,
-                        'potion_type_id'   => null,
+                        'potion_type_id'   => PotionTypeInterface::LIFE,
                         'material_type_id' => null,
-                        'gender_type_id'   => GenderTypeInterface::MALE,
+                        'gender_type_id'   => null,
+                        'magic_type_id'    => null,
+                        'stats'            => [],
                     ],
                     432,
                 ],
