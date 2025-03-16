@@ -1,0 +1,133 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Item\Drawing\DataProvider;
+
+use Item\Type\Armor\ArmorTypeInterface;
+use Item\Type\Equip\EquipTypeInterface;
+use Item\Type\Gender\GenderTypeInterface;
+use Item\Type\ItemTypeInterface;
+use Item\Type\Magic\MagicTypeInterface;
+use Item\Type\Material\MaterialTypeInterface;
+use Item\Type\Section\SectionTypeInterface;
+
+class Amulet extends AbstractDrawingDataProvider
+{
+    protected static array $drawings = [
+        5801 => [
+            'id'               => 5801,
+            'name'             => 'Amulet',
+            'icon'             => '/icon/items/amulets/03.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::AMULET,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::AMULET,
+            'section_type_id'  => SectionTypeInterface::AMULET,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::MALE,
+            'weight'           => 8,
+            'min_level'        => 1,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5802 => [
+            'id'               => 5802,
+            'name'             => 'Priest‘s Necklace',
+            'icon'             => '/icon/items/amulets/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::AMULET,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::AMULET,
+            'section_type_id'  => SectionTypeInterface::AMULET,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 5,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5803 => [
+            'id'               => 5803,
+            'name'             => 'Amulet of Sun',
+            'icon'             => '/icon/items/amulets/02.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::AMULET,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::AMULET,
+            'section_type_id'  => SectionTypeInterface::AMULET,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::MALE,
+            'weight'           => 8,
+            'min_level'        => 9,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5804 => [
+            'id'               => 5804,
+            'name'             => 'Amulet with Sapphire',
+            'icon'             => '/icon/items/amulets/04.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::AMULET,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::AMULET,
+            'section_type_id'  => SectionTypeInterface::AMULET,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::MALE,
+            'weight'           => 8,
+            'min_level'        => 13,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5805 => [
+            'id'               => 5805,
+            'name'             => 'Amulet of Necromancer',
+            'icon'             => '/icon/items/amulets/06.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::AMULET,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::AMULET,
+            'section_type_id'  => SectionTypeInterface::AMULET,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::MALE,
+            'weight'           => 8,
+            'min_level'        => 18,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5806 => [
+            'id'               => 5806,
+            'name'             => 'Amulet of Wisdom',
+            'icon'             => '/icon/items/amulets/05.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::AMULET,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::AMULET,
+            'section_type_id'  => SectionTypeInterface::AMULET,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::MALE,
+            'weight'           => 8,
+            'min_level'        => 22,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+    ];
+}
