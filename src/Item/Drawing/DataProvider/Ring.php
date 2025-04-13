@@ -1,0 +1,133 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Item\Drawing\DataProvider;
+
+use Item\Type\Armor\ArmorTypeInterface;
+use Item\Type\Equip\EquipTypeInterface;
+use Item\Type\Gender\GenderTypeInterface;
+use Item\Type\ItemTypeInterface;
+use Item\Type\Magic\MagicTypeInterface;
+use Item\Type\Material\MaterialTypeInterface;
+use Item\Type\Section\SectionTypeInterface;
+
+class Ring extends AbstractDrawingDataProvider
+{
+    protected static array $drawings = [
+        5701 => [
+            'id'               => 5701,
+            'name'             => 'Ring',
+            'icon'             => '/img/icon/items/rings/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::RING,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::RING,
+            'section_type_id'  => SectionTypeInterface::RING,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 1,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5702 => [
+            'id'               => 5702,
+            'name'             => 'Ring with Pearl',
+            'icon'             => '/img/icon/items/rings/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::RING,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::RING,
+            'section_type_id'  => SectionTypeInterface::RING,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 5,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5703 => [
+            'id'               => 5703,
+            'name'             => 'Ring with Ruby',
+            'icon'             => '/img/icon/items/rings/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::RING,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::RING,
+            'section_type_id'  => SectionTypeInterface::RING,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 9,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5704 => [
+            'id'               => 5704,
+            'name'             => 'Ring with Amber',
+            'icon'             => '/img/icon/items/rings/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::RING,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::RING,
+            'section_type_id'  => SectionTypeInterface::RING,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 13,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5705 => [
+            'id'               => 5705,
+            'name'             => 'Ring of Moon',
+            'icon'             => '/img/icon/items/rings/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::RING,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::RING,
+            'section_type_id'  => SectionTypeInterface::RING,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 18,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+        5706 => [
+            'id'               => 5706,
+            'name'             => 'Ring of Wisdom',
+            'icon'             => '/img/icon/items/rings/01.png',
+            'type_id'          => ItemTypeInterface::EQUIP,
+            'equip_type_id'    => EquipTypeInterface::RING,
+            'armor_type_id'    => ArmorTypeInterface::LIGHT,
+            'magic_type_id'    => MagicTypeInterface::RING,
+            'section_type_id'  => SectionTypeInterface::RING,
+            'material_type_id' => MaterialTypeInterface::METAL,
+            'gender_type_id'   => GenderTypeInterface::AVERAGE,
+            'weight'           => 8,
+            'min_level'        => 22,
+            'strength'         => 0.0,
+            'intelligence'     => 0.0,
+            'dexterity'        => 0.0,
+            'affix_exception'  => [],
+            'stats'            => [],
+        ],
+    ];
+}
