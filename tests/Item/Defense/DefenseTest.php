@@ -112,5 +112,32 @@ class DefenseTest extends TestCase
         self::assertEquals($globalResist, $defense->getGlobalResist());
         self::assertEquals($dodge, $defense->getDodge());
         self::assertEquals($bonusHidden, $defense->getBonusHidden());
+
+        $defense->merge(clone $defense);
+
+        self::assertEquals($physicalResist * 2, $defense->getPhysicalResist());
+        self::assertEquals($fireResist * 2, $defense->getFireResist());
+        self::assertEquals($waterResist * 2, $defense->getWaterResist());
+        self::assertEquals($airResist * 2, $defense->getAirResist());
+        self::assertEquals($earthResist * 2, $defense->getEarthResist());
+        self::assertEquals($lifeResist * 2, $defense->getLifeResist());
+        self::assertEquals($deathResist * 2, $defense->getDeathResist());
+        self::assertEquals($defenseValue * 2, $defense->getDefense());
+        self::assertEquals($magicDefense * 2, $defense->getMagicDefense());
+        self::assertEquals($increaseDefense * 2, $defense->getIncreaseDefense());
+        self::assertEquals($increaseMagicDefense * 2, $defense->getIncreaseMagicDefense());
+        self::assertEquals($block * 2, $defense->getBlock());
+        self::assertEquals($magicBlock * 2, $defense->getMagicBlock());
+        self::assertEquals($mentalBarrier * 2, $defense->getMentalBarrier());
+        self::assertEquals($physicalMaxResist * 2, $defense->getPhysicalMaxResist());
+        self::assertEquals($fireMaxResist * 2, $defense->getFireMaxResist());
+        self::assertEquals($waterMaxResist * 2, $defense->getWaterMaxResist());
+        self::assertEquals($airMaxResist * 2, $defense->getAirMaxResist());
+        self::assertEquals($earthMaxResist * 2, $defense->getEarthMaxResist());
+        self::assertEquals($lifeMaxResist * 2, $defense->getLifeMaxResist());
+        self::assertEquals($deathMaxResist * 2, $defense->getDeathMaxResist());
+        self::assertEquals($globalResist * 2, $defense->getGlobalResist());
+        self::assertEquals($dodge * 2, $defense->getDodge());
+        self::assertEquals($bonusHidden * 2, $defense->getBonusHidden());
     }
 }

@@ -54,4 +54,6 @@ interface DefenseInterface
     public function addDodge(int $dodge): void;
     public function getBonusHidden(): int;
     public function addBonusHidden(int $addHidden): void;
+
+    public function merge(DefenseInterface $defense): void;
 }

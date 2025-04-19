@@ -6,30 +6,83 @@ namespace Item\Defense;
 
 class Defense implements DefenseInterface
 {
-    private int $physicalResist = 0;
-    private int $fireResist = 0;
-    private int $waterResist = 0;
-    private int $airResist = 0;
-    private int $earthResist = 0;
-    private int $lifeResist = 0;
-    private int $deathResist = 0;
-    private int $defense = 0;
-    private int $magicDefense = 0;
-    private int $increaseDefense = 0;
-    private int $increaseMagicDefense = 0;
-    private int $block = 0;
-    private int $magicBlock = 0;
-    private int $mentalBarrier = 0;
-    private int $physicalMaxResist = 0;
-    private int $fireMaxResist = 0;
-    private int $waterMaxResist = 0;
-    private int $airMaxResist = 0;
-    private int $earthMaxResist = 0;
-    private int $lifeMaxResist = 0;
-    private int $deathMaxResist = 0;
-    private int $globalResist = 0;
-    private int $dodge = 0;
-    private int $bonusHidden = 0;
+    private int $physicalResist;
+    private int $fireResist;
+    private int $waterResist;
+    private int $airResist;
+    private int $earthResist;
+    private int $lifeResist;
+    private int $deathResist;
+    private int $defense;
+    private int $magicDefense;
+    private int $increaseDefense;
+    private int $increaseMagicDefense;
+    private int $block;
+    private int $magicBlock;
+    private int $mentalBarrier;
+    private int $physicalMaxResist;
+    private int $fireMaxResist;
+    private int $waterMaxResist;
+    private int $airMaxResist;
+    private int $earthMaxResist;
+    private int $lifeMaxResist;
+    private int $deathMaxResist;
+    private int $globalResist;
+    private int $dodge;
+    private int $bonusHidden;
+
+    public function __construct(
+        int $physicalResist = 0,
+        int $fireResist = 0,
+        int $waterResist = 0,
+        int $airResist = 0,
+        int $earthResist = 0,
+        int $lifeResist = 0,
+        int $deathResist = 0,
+        int $defense = 0,
+        int $magicDefense = 0,
+        int $increaseDefense = 0,
+        int $increaseMagicDefense = 0,
+        int $block = 0,
+        int $magicBlock = 0,
+        int $mentalBarrier = 0,
+        int $physicalMaxResist = 0,
+        int $fireMaxResist = 0,
+        int $waterMaxResist = 0,
+        int $airMaxResist = 0,
+        int $earthMaxResist = 0,
+        int $lifeMaxResist = 0,
+        int $deathMaxResist = 0,
+        int $globalResist = 0,
+        int $dodge = 0,
+        int $bonusHidden = 0
+    )
+    {
+        $this->physicalResist = $physicalResist;
+        $this->fireResist = $fireResist;
+        $this->waterResist = $waterResist;
+        $this->airResist = $airResist;
+        $this->earthResist = $earthResist;
+        $this->lifeResist = $lifeResist;
+        $this->deathResist = $deathResist;
+        $this->defense = $defense;
+        $this->magicDefense = $magicDefense;
+        $this->increaseDefense = $increaseDefense;
+        $this->increaseMagicDefense = $increaseMagicDefense;
+        $this->block = $block;
+        $this->magicBlock = $magicBlock;
+        $this->mentalBarrier = $mentalBarrier;
+        $this->physicalMaxResist = $physicalMaxResist;
+        $this->fireMaxResist = $fireMaxResist;
+        $this->waterMaxResist = $waterMaxResist;
+        $this->airMaxResist = $airMaxResist;
+        $this->earthMaxResist = $earthMaxResist;
+        $this->lifeMaxResist = $lifeMaxResist;
+        $this->deathMaxResist = $deathMaxResist;
+        $this->globalResist = $globalResist;
+        $this->dodge = $dodge;
+        $this->bonusHidden = $bonusHidden;
+    }
 
     public function getPhysicalResist(): int
     {
@@ -269,5 +322,33 @@ class Defense implements DefenseInterface
     public function addBonusHidden(int $addHidden): void
     {
         $this->bonusHidden += $addHidden;
+    }
+
+    public function merge(DefenseInterface $defense): void
+    {
+        $this->physicalResist += $defense->getPhysicalResist();
+        $this->fireResist += $defense->getFireResist();
+        $this->waterResist += $defense->getWaterResist();
+        $this->airResist += $defense->getAirResist();
+        $this->earthResist += $defense->getEarthResist();
+        $this->lifeResist += $defense->getLifeResist();
+        $this->deathResist += $defense->getDeathResist();
+        $this->defense += $defense->getDefense();
+        $this->magicDefense += $defense->getMagicDefense();
+        $this->increaseDefense += $defense->getIncreaseDefense();
+        $this->increaseMagicDefense += $defense->getIncreaseMagicDefense();
+        $this->block += $defense->getBlock();
+        $this->magicBlock += $defense->getMagicBlock();
+        $this->mentalBarrier += $defense->getMentalBarrier();
+        $this->physicalMaxResist += $defense->getPhysicalMaxResist();
+        $this->fireMaxResist += $defense->getFireMaxResist();
+        $this->waterMaxResist += $defense->getWaterMaxResist();
+        $this->airMaxResist += $defense->getAirMaxResist();
+        $this->earthMaxResist += $defense->getEarthMaxResist();
+        $this->lifeMaxResist += $defense->getLifeMaxResist();
+        $this->deathMaxResist += $defense->getDeathMaxResist();
+        $this->globalResist += $defense->getGlobalResist();
+        $this->dodge += $defense->getDodge();
+        $this->bonusHidden += $defense->getBonusHidden();
     }
 }
