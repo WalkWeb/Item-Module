@@ -43,7 +43,7 @@ class Offense implements OffenseInterface
     private int $criticalStun = 0;
     private int $criticalBleeding = 0;
 
-    public function __construct(?WeaponTypeInterface $weaponType, ?DamageTypeInterface $damageType)
+    public function __construct(?WeaponTypeInterface $weaponType = null, ?DamageTypeInterface $damageType = null)
     {
         $this->weaponType = $weaponType;
         $this->damageType = $damageType;

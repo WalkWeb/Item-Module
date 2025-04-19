@@ -67,6 +67,8 @@ class ItemTest extends TestCase
         $offense = new Offense($weaponType, $damageType);
         $defense = new Defense();
         $magicType = new MagicType(MagicTypeInterface::ONE_HAND_WEAPON);
+        $propertyInfo = '';
+        $magicPropertyInfo = '';
 
         $item = new Item(
             $id,
@@ -80,6 +82,8 @@ class ItemTest extends TestCase
             $minStrength,
             $minDexterity,
             $minIntelligence,
+            $propertyInfo,
+            $magicPropertyInfo,
             $type,
             $magicQuality,
             $base,
@@ -95,19 +99,20 @@ class ItemTest extends TestCase
         $translator = new TranslatorRU();
 
         self::assertEquals($id, $item->getId());
-        self::assertEquals($itemId, $item->getItemId());
+        self::assertEquals($itemId, $item->getDbId());
         self::assertEquals($itemLevel, $item->getItemLevel());
         self::assertEquals($inventoryId, $item->getInventoryId());
         self::assertEquals($translator->trans($name), $item->getName($translator));
+        self::assertEquals($name, $item->getNameSource());
         self::assertEquals($icon, $item->getIcon());
         self::assertEquals($price, $item->getPrice());
         self::assertEquals($minLevel, $item->getMinLevel());
         self::assertEquals($minStrength, $item->getMinStrength());
         self::assertEquals($minDexterity, $item->getMinDexterity());
         self::assertEquals($minIntelligence, $item->getMinIntelligence());
-        self::assertEquals('', $item->getPropertyInfo());
-        self::assertEquals('', $item->getMagicPropertyInfo());
-        self::assertEquals('', $item->getDescription($translator));
+        self::assertEquals($propertyInfo, $item->getPropertyInfo());
+        self::assertEquals($magicPropertyInfo, $item->getMagicPropertyInfo());
+        self::assertEquals('', $item->getDescription($translator, 100, 100, 100));
         self::assertEquals('', $item->getMagicDescription($translator));
         self::assertEquals($type, $item->getType());
         self::assertEquals($magicQuality, $item->getMagicQuality());
@@ -119,6 +124,8 @@ class ItemTest extends TestCase
         self::assertEquals($armorType, $item->getArmorType());
         self::assertEquals($potionType, $item->getPotionType());
         self::assertEquals($magicType, $item->getMagicType());
+        self::assertFalse($item->isTwoHandWeapon());
+        self::assertFalse($item->isShadow());
 
         $affixesData = [
             [
@@ -174,59 +181,10 @@ class ItemTest extends TestCase
             '<p class="item_d_m">Здоровье +60</p><p class="item_d_m">Мана -40</p><div class="item_d_line"></div>',
             $item->getMagicDescription($translator)
         );
-    }
 
-    /**
-     * @dataProvider applyStatsDataProvider
-     * @param StatCollection $stats
-     * @param float $itemQuality
-     * @param float $materialQuality
-     * @throws ItemException
-     */
-    public function testItemApplyStatsSuccess(StatCollection $stats, float $itemQuality, float $materialQuality): void
-    {
-        $item = $this->getSword();
-        $item->applyStats($stats, $itemQuality, $materialQuality);
+        $item->shadow();
 
-        // todo
-        self::assertEquals('', $item->getDescription(new TranslatorRU()));
-    }
-
-    /**
-     * @return array
-     * @throws ItemException
-     */
-    public function applyStatsDataProvider(): array
-    {
-        return [
-            [
-                StatCollectionFactory::create([
-                    [
-                        'name'    => 'offense.attackSpeed',
-                        'value'   => 110,
-                        'quality' => false,
-                        'prefix'  => '',
-                        'suffix'  => '',
-                    ],
-                    [
-                        'name'    => 'offense.criticalChance',
-                        'value'   => 10,
-                        'quality' => false,
-                        'prefix'  => '',
-                        'suffix'  => '%',
-                    ],
-                    [
-                        'name'    => 'offense.criticalMultiplier',
-                        'value'   => 200,
-                        'quality' => false,
-                        'prefix'  => '',
-                        'suffix'  => '%',
-                    ],
-                ]),
-                1,
-                1,
-            ],
-        ];
+        self::assertTrue($item->isShadow());
     }
 
     /**
@@ -277,7 +235,35 @@ class ItemTest extends TestCase
     {
         self::assertEquals($expectedDescription, $item->getTypeDescription($translator));
     }
-    
+
+    /**
+     * @dataProvider applyStatsDataProvider
+     * @param StatCollection $stats
+     * @param float $itemQuality
+     * @param float $materialQuality
+     * @param string $description
+     * @throws ItemException
+     */
+    public function testItemApplyStatsSuccess(
+        StatCollection $stats,
+        float $itemQuality,
+        float $materialQuality,
+        string $description
+    ): void
+    {
+        $item = $this->getTwoHandSword();
+        $item->applyStats($stats, $itemQuality, $materialQuality);
+
+        self::assertEquals($description, $item->getDescription(new TranslatorRU(), 100, 100, 100));
+    }
+
+    public function testItemIsTwoHandWeapon(): void
+    {
+        self::assertTrue($this->getTwoHandSword()->isTwoHandWeapon());
+        self::assertFalse($this->getSword()->isTwoHandWeapon());
+        self::assertFalse($this->getBook()->isTwoHandWeapon());
+    }
+
     /**
      * @return array
      */
@@ -707,6 +693,8 @@ class ItemTest extends TestCase
             50,
             0,
             0,
+            '',
+            '',
             new ItemType(ItemTypeInterface::EQUIP),
             new MagicQuality(MagicQualityInterface::COMMON),
             new Base(100),
@@ -717,6 +705,38 @@ class ItemTest extends TestCase
             null,
             null,
             new MagicType(MagicTypeInterface::ONE_HAND_WEAPON),
+        );
+    }
+
+    private function getTwoHandSword(): ItemInterface
+    {
+        $weaponType = new WeaponType(WeaponTypeInterface::TWO_HAND_SWORD);
+        $damageType = new DamageType(DamageTypeInterface::ATTACK);
+
+        return new Item(
+            'b9e5f6ef-7047-414e-b162-6d100311209b',
+            1546,
+            23,
+            'ba1a729c-894d-4652-b62d-76c466f48f69',
+            'Sword',
+            'icon.png',
+            150,
+            5,
+            50,
+            20,
+            10,
+            '',
+            '',
+            new ItemType(ItemTypeInterface::EQUIP),
+            new MagicQuality(MagicQualityInterface::COMMON),
+            new Base(100),
+            new Offense($weaponType, $damageType),
+            new Defense(),
+            new EquipType(EquipTypeInterface::TWO_HAND),
+            new SectionType(SectionTypeInterface::LEFT_HAND),
+            null,
+            null,
+            new MagicType(MagicTypeInterface::TWO_HAND_WEAPON),
         );
     }
 
@@ -734,10 +754,12 @@ class ItemTest extends TestCase
             50,
             0,
             0,
+            '',
+            '',
             new ItemType(ItemTypeInterface::EQUIP),
             new MagicQuality(MagicQualityInterface::COMMON),
             new Base(100),
-            new Offense(null, null),
+            new Offense(),
             new Defense(),
             new EquipType(EquipTypeInterface::ARMOR),
             new SectionType(SectionTypeInterface::ARMOR),
@@ -761,10 +783,12 @@ class ItemTest extends TestCase
             50,
             0,
             0,
+            '',
+            '',
             new ItemType(ItemTypeInterface::POTION),
             new MagicQuality(MagicQualityInterface::COMMON),
             new Base(100),
-            new Offense(null, null),
+            new Offense(),
             new Defense(),
             null,
             null,
@@ -788,10 +812,12 @@ class ItemTest extends TestCase
             50,
             0,
             0,
+            '',
+            '',
             new ItemType(ItemTypeInterface::BOOK),
             new MagicQuality(MagicQualityInterface::COMMON),
             new Base(100),
-            new Offense(null, null),
+            new Offense(),
             new Defense(),
             null,
             null,
@@ -815,10 +841,12 @@ class ItemTest extends TestCase
             50,
             0,
             0,
+            '',
+            '',
             new ItemType(ItemTypeInterface::MATERIAL),
             new MagicQuality(MagicQualityInterface::COMMON),
             new Base(100),
-            new Offense(null, null),
+            new Offense(),
             new Defense(),
             null,
             null,
@@ -826,5 +854,50 @@ class ItemTest extends TestCase
             null,
             null,
         );
+    }
+
+    /**
+     * @return array
+     * @throws ItemException
+     */
+    public function applyStatsDataProvider(): array
+    {
+        return [
+            [
+                StatCollectionFactory::create([
+                    [
+                        'name'    => 'offense.attackSpeed',
+                        'value'   => 110,
+                        'quality' => false,
+                        'prefix'  => '',
+                        'suffix'  => '',
+                    ],
+                    [
+                        'name'    => 'offense.criticalChance',
+                        'value'   => 10,
+                        'quality' => false,
+                        'prefix'  => '',
+                        'suffix'  => '%',
+                    ],
+                    [
+                        'name'    => 'offense.criticalMultiplier',
+                        'value'   => 200,
+                        'quality' => false,
+                        'prefix'  => '+',
+                        'suffix'  => '%',
+                    ],
+                    [
+                        'name'    => 'offense.criticalStun',
+                        'value'   => 1,
+                        'quality' => false,
+                        'prefix'  => '',
+                        'suffix'  => '',
+                    ],
+                ]),
+                1,
+                1,
+                '<div class="item_d_pl"><p>Скорость атаки</p></div><div class="item_d_pr"><p>1.1</p></div><div class="item_d_pl"><p>Шанс критического удара</p></div><div class="item_d_pr"><p>10%</p></div><div class="item_d_pl"><p>Сила критического удара</p></div><div class="item_d_pr"><p>+200%</p></div><div class="item_d_w"><p>Оглушает при критическом ударе</p></div><div class="item_d_pl"><p>Необходимо силы</p></div><div class="item_d_pr"><p>50</p></div><div class="item_d_pl"><p>Необходимо ловкости</p></div><div class="item_d_pr"><p>20</p></div><div class="item_d_pl"><p>Необходимо интеллекта</p></div><div class="item_d_pr"><p>10</p></div>',
+            ],
+        ];
     }
 }

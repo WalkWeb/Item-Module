@@ -18,11 +18,12 @@ use Item\Type\Magic\MagicTypeInterface;
 use Item\Type\MagicQuality\MagicQualityInterface;
 use Item\Type\Potion\PotionTypeInterface;
 use Item\Type\Section\SectionTypeInterface;
+use Item\Type\Weapon\WeaponTypeInterface;
 
 class Item implements ItemInterface
 {
     private string $id;
-    private int $itemId;
+    private int $dbId;
     private int $itemLevel;
     private string $inventoryId;
     private string $name;
@@ -32,8 +33,8 @@ class Item implements ItemInterface
     private int $minStrength;
     private int $minDexterity;
     private int $minIntelligence;
-    private string $propertyInfo = '';
-    private string $magicPropertyInfo = '';
+    private string $propertyInfo;
+    private string $magicPropertyInfo;
     private ItemTypeInterface $type;
     private MagicQualityInterface $magicQuality;
     private BaseInterface $base;
@@ -44,10 +45,11 @@ class Item implements ItemInterface
     private ?ArmorTypeInterface $armorType;
     private ?PotionTypeInterface $potionType;
     private ?MagicTypeInterface $magicType;
+    private bool $shadow = false;
 
     public function __construct(
         string $id,
-        int $itemId,
+        int $dbId,
         int $itemLevel,
         string $inventoryId,
         string $name,
@@ -57,6 +59,8 @@ class Item implements ItemInterface
         int $minStrength,
         int $minDexterity,
         int $minIntelligence,
+        string $propertyInfo,
+        string $magicPropertyInfo,
         ItemTypeInterface $type,
         MagicQualityInterface $magicQuality,
         BaseInterface $base,
@@ -70,7 +74,7 @@ class Item implements ItemInterface
     )
     {
         $this->id = $id;
-        $this->itemId = $itemId;
+        $this->dbId = $dbId;
         $this->itemLevel = $itemLevel;
         $this->inventoryId = $inventoryId;
         $this->name = $name;
@@ -80,6 +84,8 @@ class Item implements ItemInterface
         $this->minStrength = $minStrength;
         $this->minDexterity = $minDexterity;
         $this->minIntelligence = $minIntelligence;
+        $this->propertyInfo = $propertyInfo;
+        $this->magicPropertyInfo = $magicPropertyInfo;
         $this->type = $type;
         $this->magicQuality = $magicQuality;
         $this->base = $base;
@@ -97,9 +103,9 @@ class Item implements ItemInterface
         return $this->id;
     }
 
-    public function getItemId(): int
+    public function getDbId(): int
     {
-        return $this->itemId;
+        return $this->dbId;
     }
 
     public function getItemLevel(): int
@@ -122,6 +128,11 @@ class Item implements ItemInterface
         }
 
         return trim(implode(' ', $name));
+    }
+
+    public function getNameSource(): string
+    {
+        return $this->name;
     }
 
     public function getIcon(): string
@@ -166,12 +177,52 @@ class Item implements ItemInterface
 
     /**
      * @param TranslatorInterface $translator
+     * @param int $characterStrength
+     * @param int $characterDexterity
+     * @param int $characterIntelligence
      * @return string
      */
-    public function getDescription(TranslatorInterface $translator): string
+    public function getDescription(
+        TranslatorInterface $translator,
+        int $characterStrength,
+        int $characterDexterity,
+        int $characterIntelligence
+    ): string
     {
-        // todo
-        return '';
+        if ($this->propertyInfo === '') {
+            return '';
+        }
+
+        $desc = '';
+        $params = explode('|', $this->propertyInfo);
+
+        foreach ($params as $param) {
+            $p = explode('#', $param);
+
+            if ($p[0] === 'offense.attackSpeed' || $p[0] === 'offense.castSpeed') {
+                $desc .= '<div class="item_d_pl"><p>' . $translator->trans($p[0]) . '</p></div><div class="item_d_pr"><p>' . ($p[1] / 100) . '</p></div>';
+            } elseif ($p[0] === 'offense.criticalStun' || $p[0] === 'offense.criticalBleeding') {
+                $desc .= '<div class="item_d_w"><p>' . $translator->trans($p[0]) . '</p></div>';
+            } else {
+                $desc .= '<div class="item_d_pl"><p>' . $translator->trans($p[0]) . '</p></div><div class="item_d_pr"><p>' . $p[1] . '</p></div>';
+            }
+        }
+
+        $minStrength = $this->minStrength > $characterStrength ? '<span class="red">' . $this->minStrength . '</span>' : $this->minStrength;
+        $minDexterity = $this->minDexterity > $characterDexterity ? '<span class="red">' . $this->minDexterity . '</span>' : $this->minDexterity;
+        $minIntelligence = $this->minIntelligence > $characterIntelligence ? '<span class="red">' . $this->minIntelligence . '</span>' : $this->minIntelligence;
+
+        if ($this->minStrength > 0) {
+            $desc .= '<div class="item_d_pl"><p>' . $translator->trans('Min strength') . '</p></div><div class="item_d_pr"><p>' . $minStrength . '</p></div>';
+        }
+        if ($this->minDexterity > 0) {
+            $desc .= '<div class="item_d_pl"><p>' . $translator->trans('Min dexterity') . '</p></div><div class="item_d_pr"><p>' . $minDexterity . '</p></div>';
+        }
+        if ($this->minIntelligence> 0) {
+            $desc .= '<div class="item_d_pl"><p>' . $translator->trans('Min intelligence') . '</p></div><div class="item_d_pr"><p>' . $minIntelligence . '</p></div>';
+        }
+
+        return $desc;
     }
 
     /**
@@ -294,6 +345,38 @@ class Item implements ItemInterface
         return $this->magicType;
     }
 
+    public function isTwoHandWeapon(): bool
+    {
+        if (!$this->offense->getWeaponType()) {
+            return false;
+        }
+
+        $twoHandWeapons = [
+            WeaponTypeInterface::BOW,
+            WeaponTypeInterface::STAFF,
+            WeaponTypeInterface::TWO_HAND_SWORD,
+            WeaponTypeInterface::TWO_HAND_AXE,
+            WeaponTypeInterface::TWO_HAND_MACE,
+            WeaponTypeInterface::TWO_HAND_HEAVY_SWORD,
+            WeaponTypeInterface::TWO_HAND_HEAVY_AXE,
+            WeaponTypeInterface::TWO_HAND_HEAVY_MACE,
+            WeaponTypeInterface::LANCE,
+            WeaponTypeInterface::CROSSBOW,
+        ];
+
+        return in_array($this->offense->getWeaponType()->getId(), $twoHandWeapons, true);
+    }
+
+    public function isShadow(): bool
+    {
+        return $this->shadow;
+    }
+
+    public function shadow(): void
+    {
+        $this->shadow = true;
+    }
+
     public function getTypeDescription(TranslatorInterface $translator): string
     {
         if ($this->type->getId() === ItemTypeInterface::POTION) {
@@ -346,7 +429,7 @@ class Item implements ItemInterface
 
             $this->$group()->$method($value);
 
-            $info .= "{$stat->getName()}#{$value}{$stat->getSuffix()}|";
+            $info .= "{$stat->getName()}#{$stat->getPrefix()}{$value}{$stat->getSuffix()}|";
         }
 
         $this->propertyInfo = mb_substr($info, 0, -1);
@@ -385,6 +468,8 @@ class Item implements ItemInterface
                 $namePrefix = $affix->isUnique() ? '^' : '';
                 $info .= "$namePrefix{$mod->getName()}#{$mod->getPrefix()}.{$value}.{$mod->getSuffix()}|";
 
+                // todo check exist methods
+
                 $this->$group()->$method($value);
             }
         }
@@ -393,7 +478,7 @@ class Item implements ItemInterface
     }
 
     /**
-     * @return bool
+     * @return int
      */
     private function getAllMaxResistValue(): int
     {

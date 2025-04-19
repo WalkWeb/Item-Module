@@ -173,6 +173,8 @@ class AffixDataProviderTest extends TestCase
             50,
             0,
             0,
+            '',
+            '',
             new ItemType(ItemTypeInterface::EQUIP),
             new MagicQuality(MagicQualityInterface::COMMON),
             new Base(100),
