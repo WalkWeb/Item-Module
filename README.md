@@ -10,6 +10,8 @@
 | 4          | 13         |
 | 5          | 18         |
 | 6          | 22         |
+| 7          | 26         |
+| 8          | 30         |
 
 ## Weapon DPS
 
@@ -20,9 +22,11 @@
 | 3          | 43                  | 65                  |
 | 4          | 60                  | 91                  |
 | 5          | 77                  | 118                 |
-| 6          | 94                  | 144                 |
+| 6          | 83                  | 128                 |
+| 7          | 97                  | 149                 |
+| 8          | 111                 | 171                 |
 
-One hand dps weapon formula:
+One hand dps weapon formula:/ 
 
 ```php
 $dps = floor(9 + $level * 3.4);
