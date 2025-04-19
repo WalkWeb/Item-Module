@@ -8,6 +8,8 @@ use Exception;
 
 class ItemException extends Exception
 {
+    public const ALREADY_EXIST              = 'Item already exist in this collection';
+
     public const UNKNOWN_TYPE_ID            = 'Unknown type id';
     public const UNKNOWN_SECTION_TYPE       = 'Unknown section type';
     public const UNKNOWN_EQUIP_TYPE         = 'Unknown equip type';
