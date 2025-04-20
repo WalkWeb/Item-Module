@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Item\Offense;
 
+use Item\ItemException;
 use Item\Type\Damage\DamageTypeInterface;
 use Item\Type\Weapon\WeaponTypeInterface;
 
@@ -11,42 +12,107 @@ class Offense implements OffenseInterface
 {
     protected ?WeaponTypeInterface $weaponType;
     private ?DamageTypeInterface $damageType;
-    private int $physicalDamage = 0;
-    private int $fireDamage = 0;
-    private int $waterDamage = 0;
-    private int $airDamage = 0;
-    private int $earthDamage = 0;
-    private int $lifeDamage = 0;
-    private int $deathDamage = 0;
-    private int $increasePhysicalDamage = 0;
-    private int $increaseFireDamage = 0;
-    private int $increaseWaterDamage = 0;
-    private int $increaseAirDamage = 0;
-    private int $increaseEarthDamage = 0;
-    private int $increaseLifeDamage = 0;
-    private int $increaseDeathDamage = 0;
-    private int $attackSpeed = 0;
-    private int $castSpeed = 0;
-    private int $increaseAttackSpeed = 0;
-    private int $increaseCastSpeed = 0;
-    private int $accuracy = 0;
-    private int $magicAccuracy = 0;
-    private int $increaseAccuracy = 0;
-    private int $increaseMagicAccuracy = 0;
-    private int $blockIgnoring = 0;
-    private int $criticalChance = 0;
-    private int $criticalMultiplier = 0;
-    private int $increaseCriticalChance = 0;
-    private int $damageMultiplier = 0;
-    private int $vampirism = 0;
-    private int $magicVampirism = 0;
-    private int $criticalStun = 0;
-    private int $criticalBleeding = 0;
+    private int $physicalDamage;
+    private int $fireDamage;
+    private int $waterDamage;
+    private int $airDamage;
+    private int $earthDamage;
+    private int $lifeDamage;
+    private int $deathDamage;
+    private int $increasePhysicalDamage;
+    private int $increaseFireDamage;
+    private int $increaseWaterDamage;
+    private int $increaseAirDamage;
+    private int $increaseEarthDamage;
+    private int $increaseLifeDamage;
+    private int $increaseDeathDamage;
+    private int $attackSpeed;
+    private int $castSpeed;
+    private int $increaseAttackSpeed;
+    private int $increaseCastSpeed;
+    private int $accuracy;
+    private int $magicAccuracy;
+    private int $increaseAccuracy;
+    private int $increaseMagicAccuracy;
+    private int $blockIgnoring;
+    private int $criticalChance;
+    private int $criticalMultiplier;
+    private int $increaseCriticalChance;
+    private int $damageMultiplier;
+    private int $vampirism;
+    private int $magicVampirism;
+    private int $criticalStun;
+    private int $criticalBleeding;
 
-    public function __construct(?WeaponTypeInterface $weaponType = null, ?DamageTypeInterface $damageType = null)
+    public function __construct(
+        ?WeaponTypeInterface $weaponType = null,
+        ?DamageTypeInterface $damageType = null,
+        int $physicalDamage = 0,
+        int $fireDamage = 0,
+        int $waterDamage = 0,
+        int $airDamage = 0,
+        int $earthDamage = 0,
+        int $lifeDamage = 0,
+        int $deathDamage = 0,
+        int $increasePhysicalDamage = 0,
+        int $increaseFireDamage = 0,
+        int $increaseWaterDamage = 0,
+        int $increaseAirDamage = 0,
+        int $increaseEarthDamage = 0,
+        int $increaseLifeDamage = 0,
+        int $increaseDeathDamage = 0,
+        int $attackSpeed = 0,
+        int $castSpeed = 0,
+        int $increaseAttackSpeed = 0,
+        int $increaseCastSpeed = 0,
+        int $accuracy = 0,
+        int $magicAccuracy = 0,
+        int $increaseAccuracy = 0,
+        int $increaseMagicAccuracy = 0,
+        int $blockIgnoring = 0,
+        int $criticalChance = 0,
+        int $criticalMultiplier = 0,
+        int $increaseCriticalChance = 0,
+        int $damageMultiplier = 0,
+        int $vampirism = 0,
+        int $magicVampirism = 0,
+        int $criticalStun = 0,
+        int $criticalBleeding = 0
+    )
     {
         $this->weaponType = $weaponType;
         $this->damageType = $damageType;
+        $this->physicalDamage = $physicalDamage;
+        $this->fireDamage = $fireDamage;
+        $this->waterDamage = $waterDamage;
+        $this->airDamage = $airDamage;
+        $this->earthDamage = $earthDamage;
+        $this->lifeDamage = $lifeDamage;
+        $this->deathDamage = $deathDamage;
+        $this->increasePhysicalDamage = $increasePhysicalDamage;
+        $this->increaseFireDamage = $increaseFireDamage;
+        $this->increaseWaterDamage = $increaseWaterDamage;
+        $this->increaseAirDamage = $increaseAirDamage;
+        $this->increaseEarthDamage = $increaseEarthDamage;
+        $this->increaseLifeDamage = $increaseLifeDamage;
+        $this->increaseDeathDamage = $increaseDeathDamage;
+        $this->attackSpeed = $attackSpeed;
+        $this->castSpeed = $castSpeed;
+        $this->increaseAttackSpeed = $increaseAttackSpeed;
+        $this->increaseCastSpeed = $increaseCastSpeed;
+        $this->accuracy = $accuracy;
+        $this->magicAccuracy = $magicAccuracy;
+        $this->increaseAccuracy = $increaseAccuracy;
+        $this->increaseMagicAccuracy = $increaseMagicAccuracy;
+        $this->blockIgnoring = $blockIgnoring;
+        $this->criticalChance = $criticalChance;
+        $this->criticalMultiplier = $criticalMultiplier;
+        $this->increaseCriticalChance = $increaseCriticalChance;
+        $this->damageMultiplier = $damageMultiplier;
+        $this->vampirism = $vampirism;
+        $this->magicVampirism = $magicVampirism;
+        $this->criticalStun = $criticalStun;
+        $this->criticalBleeding = $criticalBleeding;
     }
 
     public function getWeaponType(): ?WeaponTypeInterface
@@ -56,6 +122,32 @@ class Offense implements OffenseInterface
 
     public function getDamageType(): ?DamageTypeInterface
     {
+        return $this->damageType;
+    }
+
+    /**
+     * @return WeaponTypeInterface
+     * @throws ItemException
+     */
+    public function getForceWeaponType(): WeaponTypeInterface
+    {
+        if ($this->weaponType === null) {
+            throw new ItemException(OffenseException::MISS_WEAPON_TYPE);
+        }
+
+        return $this->weaponType;
+    }
+
+    /**
+     * @return DamageTypeInterface
+     * @throws ItemException
+     */
+    public function getForceDamageType(): DamageTypeInterface
+    {
+        if ($this->damageType === null) {
+            throw new ItemException(OffenseException::MISS_DAMAGE_TYPE);
+        }
+
         return $this->damageType;
     }
 
@@ -367,5 +459,40 @@ class Offense implements OffenseInterface
     public function addCriticalBleeding(int $criticalBleeding): void
     {
         $this->criticalBleeding += $criticalBleeding;
+    }
+
+    public function merge(OffenseInterface $offense): void
+    {
+        $this->physicalDamage += $offense->getPhysicalDamage();
+        $this->fireDamage += $offense->getFireDamage();
+        $this->waterDamage += $offense->getWaterDamage();
+        $this->airDamage += $offense->getAirDamage();
+        $this->earthDamage += $offense->getEarthDamage();
+        $this->lifeDamage += $offense->getLifeDamage();
+        $this->deathDamage += $offense->getDeathDamage();
+        $this->increasePhysicalDamage += $offense->getIncreasePhysicalDamage();
+        $this->increaseFireDamage += $offense->getIncreaseFireDamage();
+        $this->increaseWaterDamage += $offense->getIncreaseWaterDamage();
+        $this->increaseAirDamage += $offense->getIncreaseAirDamage();
+        $this->increaseEarthDamage += $offense->getIncreaseEarthDamage();
+        $this->increaseLifeDamage += $offense->getIncreaseLifeDamage();
+        $this->increaseDeathDamage += $offense->getIncreaseDeathDamage();
+        $this->attackSpeed += $offense->getAttackSpeed();
+        $this->castSpeed += $offense->getCastSpeed();
+        $this->increaseAttackSpeed += $offense->getIncreaseAttackSpeed();
+        $this->increaseCastSpeed += $offense->getIncreaseCastSpeed();
+        $this->accuracy += $offense->getAccuracy();
+        $this->magicAccuracy += $offense->getMagicAccuracy();
+        $this->increaseAccuracy += $offense->getIncreaseAccuracy();
+        $this->increaseMagicAccuracy += $offense->getIncreaseMagicAccuracy();
+        $this->blockIgnoring += $offense->getBlockIgnore();
+        $this->criticalChance += $offense->getCriticalChance();
+        $this->criticalMultiplier += $offense->getCriticalMultiplier();
+        $this->increaseCriticalChance += $offense->getIncreaseCriticalChance();
+        $this->damageMultiplier += $offense->getDamageMultiplier();
+        $this->vampirism += $offense->getVampirism();
+        $this->magicVampirism += $offense->getMagicVampirism();
+        $this->criticalStun += $offense->getCriticalStun();
+        $this->criticalBleeding += $offense->getCriticalBleeding();
     }
 }

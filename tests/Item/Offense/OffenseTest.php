@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Item\Offense;
 
+use Item\ItemException;
 use Item\Offense\Offense;
+use Item\Offense\OffenseException;
 use Item\Type\Damage\DamageType;
 use Item\Type\Damage\DamageTypeInterface;
 use Item\Type\Weapon\WeaponType;
@@ -13,6 +15,9 @@ use PHPUnit\Framework\TestCase;
 
 class OffenseTest extends TestCase
 {
+    /**
+     * @throws ItemException
+     */
     public function testOffense(): void
     {
         $weaponType = new WeaponType(WeaponTypeInterface::SWORD);
@@ -21,6 +26,8 @@ class OffenseTest extends TestCase
 
         self::assertEquals($weaponType, $offense->getWeaponType());
         self::assertEquals($damageType, $offense->getDamageType());
+        self::assertEquals($weaponType, $offense->getForceWeaponType());
+        self::assertEquals($damageType, $offense->getForceDamageType());
         self::assertEquals(0, $offense->getPhysicalDamage());
         self::assertEquals(0, $offense->getFireDamage());
         self::assertEquals(0, $offense->getWaterDamage());
@@ -35,8 +42,8 @@ class OffenseTest extends TestCase
         self::assertEquals(0, $offense->getIncreaseEarthDamage());
         self::assertEquals(0, $offense->getIncreaseLifeDamage());
         self::assertEquals(0, $offense->getIncreaseDeathDamage());
-        self::assertEquals(0.0, $offense->getAttackSpeed());
-        self::assertEquals(0.0, $offense->getCastSpeed());
+        self::assertEquals(0, $offense->getAttackSpeed());
+        self::assertEquals(0, $offense->getCastSpeed());
         self::assertEquals(0, $offense->getIncreaseAttackSpeed());
         self::assertEquals(0, $offense->getIncreaseCastSpeed());
         self::assertEquals(0, $offense->getAccuracy());
@@ -149,5 +156,52 @@ class OffenseTest extends TestCase
         self::assertEquals($magicVampirism, $offense->getMagicVampirism());
         self::assertEquals($criticalStun, $offense->getCriticalStun());
         self::assertEquals($criticalBleeding, $offense->getCriticalBleeding());
+
+        $offense->merge(clone $offense);
+
+        self::assertEquals($fireDamage * 2, $offense->getFireDamage());
+        self::assertEquals($waterDamage * 2, $offense->getWaterDamage());
+        self::assertEquals($airDamage * 2, $offense->getAirDamage());
+        self::assertEquals($earthDamage * 2, $offense->getEarthDamage());
+        self::assertEquals($lifeDamage * 2, $offense->getLifeDamage());
+        self::assertEquals($increasePhysicalDamage * 2, $offense->getIncreasePhysicalDamage());
+        self::assertEquals($increaseFireDamage * 2, $offense->getIncreaseFireDamage());
+        self::assertEquals($increaseWaterDamage * 2, $offense->getIncreaseWaterDamage());
+        self::assertEquals($increaseAirDamage * 2, $offense->getIncreaseAirDamage());
+        self::assertEquals($increaseEarthDamage * 2, $offense->getIncreaseEarthDamage());
+        self::assertEquals($increaseLifeDamage * 2, $offense->getIncreaseLifeDamage());
+        self::assertEquals($increaseDeathDamage * 2, $offense->getIncreaseDeathDamage());
+        self::assertEquals($deathDamage * 2, $offense->getDeathDamage());
+        self::assertEquals($attackSpeed * 2, $offense->getAttackSpeed());
+        self::assertEquals($castSpeed * 2, $offense->getCastSpeed());
+        self::assertEquals($increaseAttackSpeed * 2, $offense->getIncreaseAttackSpeed());
+        self::assertEquals($increaseCastSpeed * 2, $offense->getIncreaseCastSpeed());
+        self::assertEquals($accuracy * 2, $offense->getAccuracy());
+        self::assertEquals($magicAccuracy * 2, $offense->getMagicAccuracy());
+        self::assertEquals($increaseAccuracy * 2, $offense->getIncreaseAccuracy());
+        self::assertEquals($increaseMagicAccuracy * 2, $offense->getIncreaseMagicAccuracy());
+        self::assertEquals($blockIgnoring * 2, $offense->getBlockIgnore());
+        self::assertEquals($criticalChance * 2, $offense->getCriticalChance());
+        self::assertEquals($criticalMultiplier * 2, $offense->getCriticalMultiplier());
+        self::assertEquals($increaseCriticalChance * 2, $offense->getIncreaseCriticalChance());
+        self::assertEquals($damageMultiplier * 2, $offense->getDamageMultiplier());
+        self::assertEquals($vampirism * 2, $offense->getVampirism());
+        self::assertEquals($magicVampirism * 2, $offense->getMagicVampirism());
+        self::assertEquals($criticalStun * 2, $offense->getCriticalStun());
+        self::assertEquals($criticalBleeding * 2, $offense->getCriticalBleeding());
+    }
+
+    public function testOffenseGetForceWeaponTypeMiss(): void
+    {
+        $this->expectException(ItemException::class);
+        $this->expectExceptionMessage(OffenseException::MISS_WEAPON_TYPE);
+        (new Offense())->getForceWeaponType();
+    }
+
+    public function testOffenseGetForceDamageTypeMiss(): void
+    {
+        $this->expectException(ItemException::class);
+        $this->expectExceptionMessage(OffenseException::MISS_DAMAGE_TYPE);
+        (new Offense())->getForceDamageType();
     }
 }

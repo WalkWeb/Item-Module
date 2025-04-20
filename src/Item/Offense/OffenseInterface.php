@@ -11,6 +11,8 @@ interface OffenseInterface
 {
     public function getWeaponType(): ?WeaponTypeInterface;
     public function getDamageType(): ?DamageTypeInterface;
+    public function getForceWeaponType(): WeaponTypeInterface;
+    public function getForceDamageType(): DamageTypeInterface;
     public function getPhysicalDamage(): int;
     public function addPhysicalDamage(int $physicalDamage): void;
     public function getFireDamage(): int;
@@ -73,4 +75,6 @@ interface OffenseInterface
     public function addCriticalStun(int $criticalStun): void;
     public function getCriticalBleeding(): int;
     public function addCriticalBleeding(int $criticalBleeding): void;
+
+    public function merge(OffenseInterface $offense): void;
 }
