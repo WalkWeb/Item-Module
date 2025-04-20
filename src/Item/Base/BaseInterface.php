@@ -51,4 +51,6 @@ interface BaseInterface
     public function addStaminaCost(int $staminaCost): void;
     public function getBeltSlot(): int;
     public function addBeltSlot(int $beltSlot): void;
+
+    public function merge(BaseInterface $base): void;
 }

@@ -7,32 +7,78 @@ namespace Item\Base;
 class Base implements BaseInterface
 {
     private int $weight;
-    private int $strength = 0;
-    private int $dexterity = 0;
-    private int $intelligence = 0;
-    private int $will = 0;
-    private int $endurance = 0;
-    private int $percipience = 0;
-    private int $charisma = 0;
-    private int $luck = 0;
-    private int $life = 0;
-    private int $increaseLife = 0;
-    private int $mana = 0;
-    private int $increaseMana = 0;
-    private int $stamina = 0;
-    private int $maxHorror = 0;
-    private int $lifeRegen = 0;
-    private int $manaRegen = 0;
-    private int $bonusConcentration = 0;
-    private int $bonusCunning = 0;
-    private int $bonusRage = 0;
-    private int $increaseGold = 0;
-    private int $staminaCost = 0;
-    private int $beltSlot = 0;
+    private int $strength;
+    private int $dexterity;
+    private int $intelligence;
+    private int $will;
+    private int $endurance;
+    private int $percipience;
+    private int $charisma;
+    private int $luck;
+    private int $life;
+    private int $increaseLife;
+    private int $mana;
+    private int $increaseMana;
+    private int $stamina;
+    private int $maxHorror;
+    private int $lifeRegen;
+    private int $manaRegen;
+    private int $bonusConcentration;
+    private int $bonusCunning;
+    private int $bonusRage;
+    private int $increaseGold;
+    private int $staminaCost;
+    private int $beltSlot;
 
-    public function __construct(int $weight)
+    public function __construct(
+        int $weight,
+        int $strength = 0,
+        int $dexterity = 0,
+        int $intelligence = 0,
+        int $will = 0,
+        int $endurance = 0,
+        int $percipience = 0,
+        int $charisma = 0,
+        int $luck = 0,
+        int $life = 0,
+        int $increaseLife = 0,
+        int $mana = 0,
+        int $increaseMana = 0,
+        int $stamina = 0,
+        int $maxHorror = 0,
+        int $lifeRegen = 0,
+        int $manaRegen = 0,
+        int $bonusConcentration = 0,
+        int $bonusCunning = 0,
+        int $bonusRage = 0,
+        int $increaseGold = 0,
+        int $staminaCost = 0,
+        int $beltSlot = 0
+    )
     {
         $this->weight = $weight;
+        $this->strength = $strength;
+        $this->dexterity = $dexterity;
+        $this->intelligence = $intelligence;
+        $this->will = $will;
+        $this->endurance = $endurance;
+        $this->percipience = $percipience;
+        $this->charisma = $charisma;
+        $this->luck = $luck;
+        $this->life = $life;
+        $this->increaseLife = $increaseLife;
+        $this->mana = $mana;
+        $this->increaseMana = $increaseMana;
+        $this->stamina = $stamina;
+        $this->maxHorror = $maxHorror;
+        $this->lifeRegen = $lifeRegen;
+        $this->manaRegen = $manaRegen;
+        $this->bonusConcentration = $bonusConcentration;
+        $this->bonusCunning = $bonusCunning;
+        $this->bonusRage = $bonusRage;
+        $this->increaseGold = $increaseGold;
+        $this->staminaCost = $staminaCost;
+        $this->beltSlot = $beltSlot;
     }
 
     public function getWeight(): int
@@ -258,5 +304,32 @@ class Base implements BaseInterface
     public function addBeltSlot(int $beltSlot): void
     {
         $this->beltSlot += $beltSlot;
+    }
+
+    public function merge(BaseInterface $base): void
+    {
+        $this->weight += $base->getWeight();
+        $this->strength += $base->getStrength();
+        $this->dexterity += $base->getDexterity();
+        $this->intelligence += $base->getIntelligence();
+        $this->will += $base->getWill();
+        $this->endurance += $base->getEndurance();
+        $this->percipience += $base->getPercipience();
+        $this->charisma += $base->getCharisma();
+        $this->luck += $base->getLuck();
+        $this->life += $base->getLife();
+        $this->increaseLife += $base->getIncreaseLife();
+        $this->mana += $base->getMana();
+        $this->increaseMana += $base->getIncreaseMana();
+        $this->stamina += $base->getStamina();
+        $this->maxHorror += $base->getMaxHorror();
+        $this->lifeRegen += $base->getLifeRegen();
+        $this->manaRegen += $base->getManaRegen();
+        $this->bonusConcentration += $base->getBonusConcentration();
+        $this->bonusCunning += $base->getBonusCunning();
+        $this->bonusRage += $base->getBonusRage();
+        $this->increaseGold += $base->getIncreaseGold();
+        $this->staminaCost += $base->getStaminaCost();
+        $this->beltSlot += $base->getBeltSlot();
     }
 }
