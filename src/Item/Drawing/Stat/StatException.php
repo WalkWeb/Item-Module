@@ -10,6 +10,9 @@ class StatException extends Exception
 {
     public const ALREADY_EXIST      = 'StatCollection: stat to be added already exists';
     public const EXPECTED_ARRAY     = 'StatCollection: expected array data';
+    public const MISS_WEAPON_SPEED  = 'StatFactory: miss weapon speed';
+    public const MISS_ARMOR_TYPE    = 'StatFactory: miss armor type';
+    public const MISS_SECTION_TYPE  = 'StatFactory: miss section type';
 
     public const INVALID_NAME       = 'Incorrect parameter "name", it required and type string format "value.value"';
     public const INVALID_VALUE      = 'Incorrect parameter "value", it required and type int';
