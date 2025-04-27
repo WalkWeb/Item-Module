@@ -8,6 +8,7 @@ use Item\ItemException;
 use Item\Material\Collection\MaterialCollectionFactory;
 use Item\Material\Element\MaterialElement;
 use Item\Material\MaterialException;
+use Item\Type\Material\MaterialTypeInterface;
 use PHPUnit\Framework\TestCase;
 
 class MaterialCollectionFactoryTest extends TestCase
@@ -27,6 +28,7 @@ class MaterialCollectionFactoryTest extends TestCase
         foreach ($collection as $material) {
             self::assertEquals($data[$i]['name'], $material->getName());
             self::assertEquals($data[$i]['icon'], $material->getIcon());
+            self::assertEquals($data[$i]['type'], $material->getType()->getId());
             self::assertEquals($data[$i]['level'], $material->getLevel());
             self::assertEquals($data[$i]['quality'], $material->getQuality());
             self::assertEquals($data[$i]['prefix'], $material->getPrefix());
@@ -61,6 +63,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     [
                         'name'    => 'copper',
                         'icon'    => '/icon/metals/copper.png',
+                        'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
                         'prefix'  => 'prefix_copper',
@@ -70,6 +73,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     [
                         'name'    => 'Iron',
                         'icon'    => '/icon/metals/iron.png',
+                        'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 1.0,
                         'prefix'  => 'iron',
@@ -93,6 +97,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     [
                         'name'    => 'copper',
                         'icon'    => '/icon/metals/copper.png',
+                        'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
                         'prefix'  => 'prefix_copper',
@@ -102,6 +107,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     [
                         'name'    => 'copper',
                         'icon'    => '/icon/metals/copper.png',
+                        'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
                         'prefix'  => 'prefix_copper',
@@ -117,6 +123,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     [
                         'name'    => 'copper',
                         'icon'    => '/icon/metals/copper.png',
+                        'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
                         'prefix'  => 'prefix_copper',

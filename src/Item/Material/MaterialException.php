@@ -16,6 +16,7 @@ class MaterialException extends Exception
 
     public const INVALID_NAME    = 'Incorrect parameter "name", it required and type string';
     public const INVALID_ICON    = 'Incorrect parameter "icon", it required and type string';
+    public const INVALID_TYPE    = 'Incorrect parameter "type", it required and type int';
     public const INVALID_LEVEL   = 'Incorrect parameter "level", it required and type int';
     public const INVALID_QUALITY = 'Incorrect parameter "level", it required and type float';
     public const INVALID_PREFIX  = 'Incorrect parameter "prefix", it required and type string';

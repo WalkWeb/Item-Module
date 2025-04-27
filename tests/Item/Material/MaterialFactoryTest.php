@@ -8,6 +8,7 @@ use Item\ItemException;
 use Item\Material\Element\MaterialElement;
 use Item\Material\MaterialException;
 use Item\Material\MaterialFactory;
+use Item\Type\Material\MaterialTypeInterface;
 use PHPUnit\Framework\TestCase;
 
 class MaterialFactoryTest extends TestCase
@@ -23,6 +24,7 @@ class MaterialFactoryTest extends TestCase
 
         self::assertEquals($data['name'], $material->getName());
         self::assertEquals($data['icon'], $material->getIcon());
+        self::assertEquals($data['type'], $material->getType()->getId());
         self::assertEquals($data['level'], $material->getLevel());
         self::assertEquals($data['quality'], $material->getQuality());
         self::assertEquals($data['prefix'], $material->getPrefix());
@@ -53,6 +55,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -74,6 +77,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'icon'    => '/icon/metals/copper.png',
                     'level'   => 1,
+                    'type'    => MaterialTypeInterface::METAL,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
                     'suffix'  => 'suffix_copper',
@@ -86,6 +90,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => null,
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -98,6 +103,7 @@ class MaterialFactoryTest extends TestCase
             [
                 [
                     'name'    => 'copper',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -111,6 +117,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => 100,
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -119,11 +126,39 @@ class MaterialFactoryTest extends TestCase
                 ],
                 MaterialException::INVALID_ICON,
             ],
+            // miss type
+            [
+                [
+                    'name'    => 'copper',
+                    'icon'    => '/icon/metals/copper.png',
+                    'level'   => 1,
+                    'quality' => 0.8,
+                    'prefix'  => 'prefix_copper',
+                    'suffix'  => 'suffix_copper',
+                    'element' => MaterialElement::PHYSICAL,
+                ],
+                MaterialException::INVALID_TYPE,
+            ],
+            // type invalid type
+            [
+                [
+                    'name'    => 'copper',
+                    'icon'    => '/icon/metals/copper.png',
+                    'type'    => [],
+                    'level'   => 1,
+                    'quality' => 0.8,
+                    'prefix'  => 'prefix_copper',
+                    'suffix'  => 'suffix_copper',
+                    'element' => MaterialElement::PHYSICAL,
+                ],
+                MaterialException::INVALID_TYPE,
+            ],
             // miss level
             [
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
                     'suffix'  => 'suffix_copper',
@@ -136,6 +171,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => true,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -149,6 +185,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'prefix'  => 'prefix_copper',
                     'suffix'  => 'suffix_copper',
@@ -161,6 +198,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 123,
                     'prefix'  => 'prefix_copper',
@@ -174,6 +212,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'suffix'  => 'suffix_copper',
@@ -186,6 +225,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => null,
@@ -199,6 +239,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -211,6 +252,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -224,6 +266,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',
@@ -236,6 +279,7 @@ class MaterialFactoryTest extends TestCase
                 [
                     'name'    => 'copper',
                     'icon'    => '/icon/metals/copper.png',
+                    'type'    => MaterialTypeInterface::METAL,
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'prefix_copper',

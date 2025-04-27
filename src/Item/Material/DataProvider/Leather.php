@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Item\Material\DataProvider;
 
 use Item\Material\Element\MaterialElement;
+use Item\Type\Material\MaterialTypeInterface;
 
 class Leather extends AbstractMaterialDataProvider
 {
@@ -13,6 +14,7 @@ class Leather extends AbstractMaterialDataProvider
         'wolf_leather'           => [
             'name'    => 'Wolf Leather',
             'icon'    => '/icon/leathers/leather_1.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 1,
             'quality' => 0.9,
             'prefix'  => '',
@@ -22,6 +24,7 @@ class Leather extends AbstractMaterialDataProvider
         'hyena_leather'          => [
             'name'    => 'Hyena Leather',
             'icon'    => '/icon/leathers/leather_2.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 1,
             'quality' => 1.0,
             'prefix'  => '',
@@ -31,6 +34,7 @@ class Leather extends AbstractMaterialDataProvider
         'scavenger_leather'      => [
             'name'    => 'Scavenger Leather',
             'icon'    => '/icon/leathers/leather_21.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 3,
             'quality' => 1.1,
             'prefix'  => '',
@@ -41,6 +45,7 @@ class Leather extends AbstractMaterialDataProvider
         'griffin_leather'        => [
             'name'    => 'Griffin Leather',
             'icon'    => '/icon/leathers/leather_19.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 4,
             'quality' => 1.2,
             'prefix'  => '',
@@ -50,6 +55,7 @@ class Leather extends AbstractMaterialDataProvider
         'boar_leather'           => [
             'name'    => 'Boar Leather',
             'icon'    => '/icon/leathers/leather_9.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 6,
             'quality' => 1.3,
             'prefix'  => '',
@@ -59,6 +65,7 @@ class Leather extends AbstractMaterialDataProvider
         'white_deer_leather'     => [
             'name'    => 'White Deer Leather',
             'icon'    => '/icon/leathers/leather_10.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 8,
             'quality' => 1.4,
             'prefix'  => '',
@@ -68,6 +75,7 @@ class Leather extends AbstractMaterialDataProvider
         'monitor_lizard_leather' => [
             'name'    => 'Monitor Lizard Leather',
             'icon'    => '/icon/leathers/leather_22.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 11,
             'quality' => 1.4,
             'prefix'  => '',
@@ -78,6 +86,7 @@ class Leather extends AbstractMaterialDataProvider
         'bison_leather'          => [
             'name'    => 'Bison Leather',
             'icon'    => '/icon/leathers/leather_9.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 14,
             'quality' => 1.5,
             'prefix'  => '',
@@ -87,6 +96,7 @@ class Leather extends AbstractMaterialDataProvider
         'leopard_leather'        => [
             'name'    => 'Leopard Leather',
             'icon'    => '/icon/leathers/leather_6.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 15,
             'quality' => 1.55,
             'prefix'  => '',
@@ -96,6 +106,7 @@ class Leather extends AbstractMaterialDataProvider
         'hippopotamus_leather'   => [
             'name'    => 'Hippopotamus Leather',
             'icon'    => '/icon/leathers/leather_17.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 16,
             'quality' => 1.6,
             'prefix'  => '',
@@ -105,6 +116,7 @@ class Leather extends AbstractMaterialDataProvider
         'irbis_leather'          => [
             'name'    => 'Irbis Leather',
             'icon'    => '/icon/leathers/leather_7.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 17,
             'quality' => 1.65,
             'prefix'  => '',
@@ -114,6 +126,7 @@ class Leather extends AbstractMaterialDataProvider
         'bear_leather'           => [
             'name'    => 'Bear Leather',
             'icon'    => '/icon/leathers/leather_18.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 18,
             'quality' => 1.7,
             'prefix'  => '',
@@ -123,6 +136,7 @@ class Leather extends AbstractMaterialDataProvider
         'royal_fox_leather'      => [
             'name'    => 'Royal Fox Leather',
             'icon'    => '/icon/leathers/leather_20.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 20,
             'quality' => 1.75,
             'prefix'  => '',
@@ -132,6 +146,7 @@ class Leather extends AbstractMaterialDataProvider
         'rakshasa_leather'       => [
             'name'    => 'Rakshasa Leather',
             'icon'    => '/icon/leathers/leather_22.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 21,
             'quality' => 1.75,
             'prefix'  => '',
@@ -141,6 +156,7 @@ class Leather extends AbstractMaterialDataProvider
         'wyvern_leather'       => [
             'name'    => 'Wyvern Leather',
             'icon'    => '/icon/leathers/leather_21.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 22,
             'quality' => 1.75,
             'prefix'  => '',
@@ -151,6 +167,7 @@ class Leather extends AbstractMaterialDataProvider
         'manticore_leather'      => [
             'name'    => 'Manticore Leather',
             'icon'    => '/icon/leathers/leather_4.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 23,
             'quality' => 1.8,
             'prefix'  => '',
@@ -160,6 +177,7 @@ class Leather extends AbstractMaterialDataProvider
         'chimera_leather'        => [
             'name'    => 'Chimera Leather',
             'icon'    => '/icon/leathers/leather_13.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 23,
             'quality' => 1.8,
             'prefix'  => '',
@@ -169,6 +187,7 @@ class Leather extends AbstractMaterialDataProvider
         'harpy_leather'          => [
             'name'    => 'Harpy Leather',
             'icon'    => '/icon/leathers/leather_11.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 23,
             'quality' => 1.8,
             'prefix'  => '',
@@ -178,6 +197,7 @@ class Leather extends AbstractMaterialDataProvider
         'cave_snake_leather'     => [
             'name'    => 'Cave Snake Leather',
             'icon'    => '/icon/leathers/leather_18.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 23,
             'quality' => 1.8,
             'prefix'  => '',
@@ -187,6 +207,7 @@ class Leather extends AbstractMaterialDataProvider
         'unicorn_leather'        => [
             'name'    => 'Unicorn Leather',
             'icon'    => '/icon/leathers/leather_10.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 25,
             'quality' => 1.85,
             'prefix'  => '',
@@ -196,6 +217,7 @@ class Leather extends AbstractMaterialDataProvider
         'night_beast_leather'    => [
             'name'    => 'Night Beast Leather',
             'icon'    => '/icon/leathers/leather_22.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 25,
             'quality' => 1.85,
             'prefix'  => '',
@@ -205,6 +227,7 @@ class Leather extends AbstractMaterialDataProvider
         'elephant_leather'       => [
             'name'    => 'Elephant Leather',
             'icon'    => '/icon/leathers/leather_17.png',
+            'type'    => MaterialTypeInterface::LEATHER,
             'level'   => 27,
             'quality' => 1.9,
             'prefix'  => '',

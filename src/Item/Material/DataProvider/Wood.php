@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Item\Material\DataProvider;
 
 use Item\Material\Element\MaterialElement;
+use Item\Type\Material\MaterialTypeInterface;
 
 class Wood extends AbstractMaterialDataProvider
 {
@@ -13,6 +14,7 @@ class Wood extends AbstractMaterialDataProvider
         'wood'          => [
             'name'    => 'Wood',
             'icon'    => '/icon/woods/woods.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 1,
             'quality' => 0.8,
             'prefix'  => '',
@@ -22,6 +24,7 @@ class Wood extends AbstractMaterialDataProvider
         'mahogany'      => [
             'name'    => 'Mahogany',
             'icon'    => '/icon/woods/mahogany.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 2,
             'quality' => 1.0,
             'prefix'  => '',
@@ -31,6 +34,7 @@ class Wood extends AbstractMaterialDataProvider
         'merbau_tree'   => [
             'name'    => 'Merbau Tree',
             'icon'    => '/icon/woods/merbau_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 3,
             'quality' => 1.1,
             'prefix'  => '',
@@ -41,6 +45,7 @@ class Wood extends AbstractMaterialDataProvider
         'amaranth_tree' => [
             'name'    => 'Amaranth Tree',
             'icon'    => '/icon/woods/amaranth_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 5,
             'quality' => 1.2,
             'prefix'  => '',
@@ -50,6 +55,7 @@ class Wood extends AbstractMaterialDataProvider
         'oak'           => [
             'name'    => 'Oak',
             'icon'    => '/icon/woods/oak.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 7,
             'quality' => 1.3,
             'prefix'  => '',
@@ -59,6 +65,7 @@ class Wood extends AbstractMaterialDataProvider
         'sacred_tree'   => [
             'name'    => 'Sacred Tree',
             'icon'    => '/icon/woods/sacred_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 10,
             'quality' => 1.4,
             'prefix'  => '',
@@ -68,6 +75,7 @@ class Wood extends AbstractMaterialDataProvider
         'bloody_tree'   => [
             'name'    => 'Bloody Tree',
             'icon'    => '/icon/woods/bloody_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 12,
             'quality' => 1.4,
             'prefix'  => '',
@@ -78,6 +86,7 @@ class Wood extends AbstractMaterialDataProvider
         'sequoia' => [
             'name'    => 'Sequoia',
             'icon'    => '/icon/woods/sequoia.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 14,
             'quality' => 1.5,
             'prefix'  => '',
@@ -87,6 +96,7 @@ class Wood extends AbstractMaterialDataProvider
         'ruby_tree' => [
             'name'    => 'Ruby Tree',
             'icon'    => '/icon/woods/ruby_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 15,
             'quality' => 1.55,
             'prefix'  => '',
@@ -96,6 +106,7 @@ class Wood extends AbstractMaterialDataProvider
         'juniper' => [
             'name'    => 'Juniper',
             'icon'    => '/icon/woods/juniper.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 16,
             'quality' => 1.6,
             'prefix'  => '',
@@ -105,6 +116,7 @@ class Wood extends AbstractMaterialDataProvider
         'sakura' => [
             'name'    => 'Sakura',
             'icon'    => '/icon/woods/sakura.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 17,
             'quality' => 1.65,
             'prefix'  => '',
@@ -114,6 +126,7 @@ class Wood extends AbstractMaterialDataProvider
         'mangrove_tree' => [
             'name'    => 'Mangrove Tree',
             'icon'    => '/icon/woods/mangrove_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 18,
             'quality' => 1.7,
             'prefix'  => '',
@@ -123,6 +136,7 @@ class Wood extends AbstractMaterialDataProvider
         'poisonous_tree' => [
             'name'    => 'Poisonous Tree',
             'icon'    => '/icon/woods/poisonous_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 20,
             'quality' => 1.75,
             'prefix'  => '',
@@ -132,6 +146,7 @@ class Wood extends AbstractMaterialDataProvider
         'wisteria' => [
             'name'    => 'Wisteria',
             'icon'    => '/icon/woods/wisteria.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 21,
             'quality' => 1.75,
             'prefix'  => '',
@@ -142,6 +157,7 @@ class Wood extends AbstractMaterialDataProvider
         'thousand_year_tree' => [
             'name'    => 'Thousand Year Tree',
             'icon'    => '/icon/woods/thousand_year_tree.png',
+            'type'    => MaterialTypeInterface::WOOD,
             'level'   => 23,
             'quality' => 1.9,
             'prefix'  => '',

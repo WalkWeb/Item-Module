@@ -7,6 +7,7 @@ namespace Item\Material;
 use Item\ItemException;
 use Item\Material\Element\MaterialElement;
 use Item\Traits\ValidationTrait;
+use Item\Type\Material\MaterialType;
 
 class MaterialFactory
 {
@@ -22,6 +23,7 @@ class MaterialFactory
         return new Material(
             self::string($data, 'name', MaterialException::INVALID_NAME),
             self::string($data, 'icon', MaterialException::INVALID_ICON),
+            new MaterialType(self::int($data, 'type', MaterialException::INVALID_TYPE)),
             self::int($data, 'level', MaterialException::INVALID_LEVEL),
             self::float($data, 'quality', MaterialException::INVALID_QUALITY),
             self::string($data, 'prefix', MaterialException::INVALID_PREFIX),

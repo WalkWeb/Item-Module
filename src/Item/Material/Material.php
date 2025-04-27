@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Item\Material;
 
 use Item\Material\Element\MaterialElementInterface;
+use Item\Type\Material\MaterialTypeInterface;
 
 class Material implements MaterialInterface
 {
     private string $name;
     private string $icon;
+    private MaterialTypeInterface $type;
     private int $level;
     private float $quality;
     private string $prefix;
@@ -19,6 +21,7 @@ class Material implements MaterialInterface
     public function __construct(
         string $name,
         string $icon,
+        MaterialTypeInterface $type,
         int $level,
         float $quality,
         string $prefix,
@@ -28,6 +31,7 @@ class Material implements MaterialInterface
     {
         $this->name = $name;
         $this->icon = $icon;
+        $this->type = $type;
         $this->level = $level;
         $this->quality = $quality;
         $this->prefix = $prefix;
@@ -43,6 +47,11 @@ class Material implements MaterialInterface
     public function getIcon(): string
     {
         return $this->icon;
+    }
+
+    public function getType(): MaterialTypeInterface
+    {
+        return $this->type;
     }
 
     public function getLevel(): int
