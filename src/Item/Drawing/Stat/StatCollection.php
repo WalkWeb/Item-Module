@@ -38,4 +38,24 @@ class StatCollection implements Iterator, Countable
     {
         return current($this->elements);
     }
+
+    /**
+     * @param StatInterface $stat
+     * @throws ItemException
+     */
+    public function addFirst(StatInterface $stat): void
+    {
+        if (array_key_exists($stat->getName(), $this->elements)) {
+            throw new ItemException(StatException::ALREADY_EXIST);
+        }
+
+        $elements = [];
+        $elements[$stat->getName()] = $stat;
+
+        foreach ($this->elements as $element) {
+            $elements[$element->getName()] = $element;
+        }
+
+        $this->elements = $elements;
+    }
 }
