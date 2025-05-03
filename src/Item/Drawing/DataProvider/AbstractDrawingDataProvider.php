@@ -15,6 +15,27 @@ abstract class AbstractDrawingDataProvider
 {
     protected static array $drawings = [];
 
+    private static array $groups = [
+        Amulet::class,
+        Armor::class,
+        Axe::class,
+        Boots::class,
+        Bow::class,
+        Crossbow::class,
+        Dagger::class,
+        Gloves::class,
+        Helmet::class,
+        Legs::class,
+        Armor::class,
+        Mace::class,
+        Ring::class,
+        Shield::class,
+        Shoulders::class,
+        Staff::class,
+        Sword::class,
+        Wand::class,
+    ];
+
     /**
      * @param int $id
      * @return DrawingInterface
@@ -36,6 +57,14 @@ abstract class AbstractDrawingDataProvider
     public static function getAll(): DrawingCollection
     {
         return DrawingCollectionFactory::create(static::$drawings);
+    }
+
+    /**
+     * @return array
+     */
+    public static function getGroups(): array
+    {
+        return self::$groups;
     }
 
     /**

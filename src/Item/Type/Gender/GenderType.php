@@ -15,6 +15,13 @@ class GenderType implements GenderTypeInterface
         self::MULTIPLE => 'multiple',
     ];
 
+    private static array $suffixMap = [
+        self::MALE     => '_m',
+        self::FEMALE   => '_f',
+        self::AVERAGE  => '_n',
+        self::MULTIPLE => '_p',
+    ];
+
     private int $id;
 
     private string $name;
@@ -43,6 +50,11 @@ class GenderType implements GenderTypeInterface
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getSuffix(): string
+    {
+        return self::$suffixMap[$this->id];
     }
 
     /**

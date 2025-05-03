@@ -10,4 +10,8 @@ interface GenderTypeInterface
     public const FEMALE   = 2;
     public const AVERAGE  = 3;
     public const MULTIPLE = 4;
+
+    public function getId(): int;
+    public function getName(): string;
+    public function getSuffix(): string;
 }
