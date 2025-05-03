@@ -129,7 +129,7 @@ class CrossbowTest extends TestCase
                 [
                     'id'               => 1001,
                     'name'             => 'Light Crossbow',
-                    'icon'             => '/icon/items/crossbow/01.png',
+                    'icon'             => '/img/icon/items/crossbow/01.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::TWO_HAND,
                     'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,

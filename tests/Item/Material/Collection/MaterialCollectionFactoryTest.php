@@ -62,7 +62,7 @@ class MaterialCollectionFactoryTest extends TestCase
                 [
                     [
                         'name'    => 'copper',
-                        'icon'    => '/icon/metals/copper.png',
+                        'icon'    => '/img/icon/metals/copper.png',
                         'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
@@ -72,7 +72,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     ],
                     [
                         'name'    => 'Iron',
-                        'icon'    => '/icon/metals/iron.png',
+                        'icon'    => '/img/icon/metals/iron.png',
                         'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 1.0,
@@ -96,7 +96,7 @@ class MaterialCollectionFactoryTest extends TestCase
                 [
                     [
                         'name'    => 'copper',
-                        'icon'    => '/icon/metals/copper.png',
+                        'icon'    => '/img/icon/metals/copper.png',
                         'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
@@ -106,7 +106,7 @@ class MaterialCollectionFactoryTest extends TestCase
                     ],
                     [
                         'name'    => 'copper',
-                        'icon'    => '/icon/metals/copper.png',
+                        'icon'    => '/img/icon/metals/copper.png',
                         'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,
@@ -122,7 +122,7 @@ class MaterialCollectionFactoryTest extends TestCase
                 [
                     [
                         'name'    => 'copper',
-                        'icon'    => '/icon/metals/copper.png',
+                        'icon'    => '/img/icon/metals/copper.png',
                         'type'    => MaterialTypeInterface::METAL,
                         'level'   => 1,
                         'quality' => 0.8,

@@ -18,7 +18,7 @@ class Amulet extends AbstractDrawingDataProvider
         5801 => [
             'id'               => 5801,
             'name'             => 'Amulet',
-            'icon'             => '/icon/items/amulets/03.png',
+            'icon'             => '/img/icon/items/amulets/03.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::AMULET,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -37,7 +37,7 @@ class Amulet extends AbstractDrawingDataProvider
         5802 => [
             'id'               => 5802,
             'name'             => 'Priest‘s Necklace',
-            'icon'             => '/icon/items/amulets/01.png',
+            'icon'             => '/img/icon/items/amulets/01.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::AMULET,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -56,7 +56,7 @@ class Amulet extends AbstractDrawingDataProvider
         5803 => [
             'id'               => 5803,
             'name'             => 'Amulet of Sun',
-            'icon'             => '/icon/items/amulets/02.png',
+            'icon'             => '/img/icon/items/amulets/02.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::AMULET,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -75,7 +75,7 @@ class Amulet extends AbstractDrawingDataProvider
         5804 => [
             'id'               => 5804,
             'name'             => 'Amulet with Sapphire',
-            'icon'             => '/icon/items/amulets/04.png',
+            'icon'             => '/img/icon/items/amulets/04.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::AMULET,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -94,7 +94,7 @@ class Amulet extends AbstractDrawingDataProvider
         5805 => [
             'id'               => 5805,
             'name'             => 'Amulet of Necromancer',
-            'icon'             => '/icon/items/amulets/06.png',
+            'icon'             => '/img/icon/items/amulets/06.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::AMULET,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -113,7 +113,7 @@ class Amulet extends AbstractDrawingDataProvider
         5806 => [
             'id'               => 5806,
             'name'             => 'Amulet of Wisdom',
-            'icon'             => '/icon/items/amulets/05.png',
+            'icon'             => '/img/icon/items/amulets/05.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::AMULET,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,

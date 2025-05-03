@@ -19,7 +19,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1001 => [
             'id'               => 1001,
             'name'             => 'Light Crossbow',
-            'icon'             => '/icon/items/crossbow/01.png',
+            'icon'             => '/img/icon/items/crossbow/01.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -72,7 +72,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1002 => [
             'id'               => 1002,
             'name'             => 'Militiaman‘s Crossbow',
-            'icon'             => '/icon/items/crossbow/04.png',
+            'icon'             => '/img/icon/items/crossbow/04.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -127,7 +127,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1003 => [
             'id'               => 1003,
             'name'             => 'Heavy crossbow',
-            'icon'             => '/icon/items/crossbow/07.png',
+            'icon'             => '/img/icon/items/crossbow/07.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -182,7 +182,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1004 => [
             'id'               => 1004,
             'name'             => 'Arquebus',
-            'icon'             => '/icon/items/crossbow/01.png',
+            'icon'             => '/img/icon/items/crossbow/01.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -237,7 +237,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1005 => [
             'id'               => 1005,
             'name'             => 'Crossbow',
-            'icon'             => '/icon/items/crossbow/04.png',
+            'icon'             => '/img/icon/items/crossbow/04.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -292,7 +292,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1006 => [
             'id'               => 1006,
             'name'             => 'Double crossbow',
-            'icon'             => '/icon/items/crossbow/07.png',
+            'icon'             => '/img/icon/items/crossbow/07.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -347,7 +347,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1007 => [
             'id'               => 1007,
             'name'             => 'Self-loading crossbow',
-            'icon'             => '/icon/items/crossbow/02.png',
+            'icon'             => '/img/icon/items/crossbow/02.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -402,7 +402,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1008 => [
             'id'               => 1008,
             'name'             => 'Siege Crossbow',
-            'icon'             => '/icon/items/crossbow/05.png',
+            'icon'             => '/img/icon/items/crossbow/05.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -457,7 +457,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1009 => [
             'id'               => 1009,
             'name'             => 'Double Heavy Crossbow',
-            'icon'             => '/icon/items/crossbow/08.png',
+            'icon'             => '/img/icon/items/crossbow/08.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -512,7 +512,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1010 => [
             'id'               => 1010,
             'name'             => 'Rapid Fire Crossbow',
-            'icon'             => '/icon/items/crossbow/02.png',
+            'icon'             => '/img/icon/items/crossbow/02.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -567,7 +567,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1011 => [
             'id'               => 1011,
             'name'             => 'Dwarven Crossbow',
-            'icon'             => '/icon/items/crossbow/05.png',
+            'icon'             => '/img/icon/items/crossbow/05.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -622,7 +622,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1012 => [
             'id'               => 1012,
             'name'             => 'Scourge of Magicians',
-            'icon'             => '/icon/items/crossbow/08.png',
+            'icon'             => '/img/icon/items/crossbow/08.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -677,7 +677,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1013 => [
             'id'               => 1013,
             'name'             => 'Compound crossbow',
-            'icon'             => '/icon/items/crossbow/03.png',
+            'icon'             => '/img/icon/items/crossbow/03.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -732,7 +732,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1014 => [
             'id'               => 1014,
             'name'             => 'The Storm of Knights',
-            'icon'             => '/icon/items/crossbow/09.png',
+            'icon'             => '/img/icon/items/crossbow/09.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -787,7 +787,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1015 => [
             'id'               => 1015,
             'name'             => 'Ballista',
-            'icon'             => '/icon/items/crossbow/10.png',
+            'icon'             => '/img/icon/items/crossbow/10.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -842,7 +842,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1016 => [
             'id'               => 1016,
             'name'             => 'Multi-shot crossbow',
-            'icon'             => '/icon/items/crossbow/03.png',
+            'icon'             => '/img/icon/items/crossbow/03.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -897,7 +897,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1018 => [
             'id'               => 1018,
             'name'             => 'Hydra Crossbow',
-            'icon'             => '/icon/items/crossbow/09.png',
+            'icon'             => '/img/icon/items/crossbow/09.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -952,7 +952,7 @@ class Crossbow extends AbstractDrawingDataProvider
         1019 => [
             'id'               => 1019,
             'name'             => 'Dragon Slayer',
-            'icon'             => '/icon/items/crossbow/10.png',
+            'icon'             => '/img/icon/items/crossbow/10.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,

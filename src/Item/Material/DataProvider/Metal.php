@@ -13,7 +13,7 @@ class Metal extends AbstractMaterialDataProvider
         // Tier 1
         'copper'            => [
             'name'    => 'Copper',
-            'icon'    => '/icon/metals/copper.png',
+            'icon'    => '/img/icon/metals/copper.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 1,
             'quality' => 0.8,
@@ -23,7 +23,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'iron'              => [
             'name'    => 'Iron',
-            'icon'    => '/icon/metals/iron.png',
+            'icon'    => '/img/icon/metals/iron.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 1,
             'quality' => 1.0,
@@ -33,7 +33,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'silver'            => [
             'name'    => 'Silver',
-            'icon'    => '/icon/metals/silver.png',
+            'icon'    => '/img/icon/metals/silver.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 3,
             'quality' => 1.1,
@@ -44,7 +44,7 @@ class Metal extends AbstractMaterialDataProvider
         // Tier 2
         'gold'              => [
             'name'    => 'Gold',
-            'icon'    => '/icon/metals/gold.png',
+            'icon'    => '/img/icon/metals/gold.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 4,
             'quality' => 1.2,
@@ -54,7 +54,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'agatyp'            => [
             'name'    => 'Agatyp',
-            'icon'    => '/icon/metals/agatyp.png',
+            'icon'    => '/img/icon/metals/agatyp.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 6,
             'quality' => 1.25,
@@ -64,7 +64,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'white_metal'       => [
             'name'    => 'White Metal',
-            'icon'    => '/icon/metals/talc.png',
+            'icon'    => '/img/icon/metals/talc.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 8,
             'quality' => 1.3,
@@ -74,7 +74,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'miteril'           => [
             'name'    => 'Miteril',
-            'icon'    => '/icon/metals/miteril.png',
+            'icon'    => '/img/icon/metals/miteril.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 10,
             'quality' => 1.35,
@@ -84,7 +84,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'doom_metal'        => [
             'name'    => 'Doom Metal',
-            'icon'    => '/icon/metals/doom.png',
+            'icon'    => '/img/icon/metals/doom.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 12,
             'quality' => 1.4,
@@ -95,7 +95,7 @@ class Metal extends AbstractMaterialDataProvider
         // Tier 3
         'crystalline_metal' => [
             'name'    => 'Crystalline Metal',
-            'icon'    => '/icon/metals/crystal.png',
+            'icon'    => '/img/icon/metals/crystal.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 14,
             'quality' => 1.5,
@@ -105,7 +105,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'meteorite'         => [
             'name'    => 'Meteorite',
-            'icon'    => '/icon/metals/meteorite.png',
+            'icon'    => '/img/icon/metals/meteorite.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 15,
             'quality' => 1.55,
@@ -115,7 +115,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'mithril'           => [
             'name'    => 'Mithril',
-            'icon'    => '/icon/metals/mithril.png',
+            'icon'    => '/img/icon/metals/mithril.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 16,
             'quality' => 1.6,
@@ -125,7 +125,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'valorite'          => [
             'name'    => 'Valorite',
-            'icon'    => '/icon/metals/valorite.png',
+            'icon'    => '/img/icon/metals/valorite.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 17,
             'quality' => 1.65,
@@ -135,7 +135,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'verite'            => [
             'name'    => 'Verite',
-            'icon'    => '/icon/metals/verite.png',
+            'icon'    => '/img/icon/metals/verite.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 18,
             'quality' => 1.7,
@@ -145,7 +145,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'black_metal'       => [
             'name'    => 'Black Metal',
-            'icon'    => '/icon/metals/black.png',
+            'icon'    => '/img/icon/metals/black.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 20,
             'quality' => 1.75,
@@ -155,7 +155,7 @@ class Metal extends AbstractMaterialDataProvider
         ],
         'heavenly_metal'    => [
             'name'    => 'Heavenly Metal',
-            'icon'    => '/icon/metals/heaven.png',
+            'icon'    => '/img/icon/metals/heaven.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 21,
             'quality' => 1.75,
@@ -166,7 +166,7 @@ class Metal extends AbstractMaterialDataProvider
         // Tier 4
         'titan'             => [
             'name'    => 'Titan',
-            'icon'    => '/icon/metals/titan.png',
+            'icon'    => '/img/icon/metals/titan.png',
             'type'    => MaterialTypeInterface::METAL,
             'level'   => 23,
             'quality' => 1.9,

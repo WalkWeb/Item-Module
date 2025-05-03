@@ -112,7 +112,7 @@ class MetalTest extends TestCase
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
             'id'               => 5001,
             'name'             => 'Wanderer‘s Cape',
-            'icon'             => '/icon/items/armors/04.png',
+            'icon'             => '/img/icon/items/armors/04.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::ARMOR,
             'armor_type_id'    => ArmorTypeInterface::ROBE,
@@ -135,7 +135,7 @@ class MetalTest extends TestCase
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
             'id'               => 5011,
             'name'             => 'Vest',
-            'icon'             => '/icon/items/armors/06.png',
+            'icon'             => '/img/icon/items/armors/06.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::ARMOR,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -155,7 +155,7 @@ class MetalTest extends TestCase
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
             'id'               => 5021,
             'name'             => 'Chainmail',
-            'icon'             => '/icon/items/armors/08.png',
+            'icon'             => '/img/icon/items/armors/08.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::ARMOR,
             'armor_type_id'    => ArmorTypeInterface::MIDDLE,
@@ -175,7 +175,7 @@ class MetalTest extends TestCase
         self::assertInstanceOf(MaterialInterface::class, Metal::getByDrawing(DrawingFactory::create([
             'id'               => 1101,
             'name'             => 'Staff',
-            'icon'             => '/icon/items/staffs/01.png',
+            'icon'             => '/img/icon/items/staffs/01.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::STAFF,
@@ -272,7 +272,7 @@ class MetalTest extends TestCase
                 'copper',
                 [
                     'name'    => 'Copper',
-                    'icon'    => '/icon/metals/copper.png',
+                    'icon'    => '/img/icon/metals/copper.png',
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => 'copper',

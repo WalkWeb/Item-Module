@@ -61,7 +61,7 @@ class LeatherTest extends TestCase
                 'wolf_leather',
                 [
                     'name'    => 'Wolf Leather',
-                    'icon'    => '/icon/leathers/leather_1.png',
+                    'icon'    => '/img/icon/leathers/leather_1.png',
                     'level'   => 1,
                     'quality' => 0.9,
                     'prefix'  => '',

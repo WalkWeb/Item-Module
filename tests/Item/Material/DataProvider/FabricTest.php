@@ -61,7 +61,7 @@ class FabricTest extends TestCase
                 'ajura_fabric',
                 [
                     'name'    => 'Ajura Fabric',
-                    'icon'    => '/icon/cloths/fabric_02.png',
+                    'icon'    => '/img/icon/cloths/fabric_02.png',
                     'level'   => 1,
                     'quality' => 1.0,
                     'prefix'  => '',

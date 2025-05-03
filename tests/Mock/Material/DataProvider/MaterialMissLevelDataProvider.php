@@ -12,7 +12,7 @@ class MaterialMissLevelDataProvider extends AbstractMaterialDataProvider
     protected static array $materials = [
         'cashmere_fabric'       => [
             'name'    => 'Cashmere Fabric',
-            'icon'    => '/icon/cloths/fabric_04.png',
+            'icon'    => '/img/icon/cloths/fabric_04.png',
             'quality' => 1.5,
             'prefix'  => '',
             'suffix'  => 'cashmere_fabric',

@@ -1,0 +1,365 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #a9825d;
+    font: normal 13px arial, helvetica, sans-serif;
+    background: #0d0c0a;
+}
+
+.icon_container {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    width: 75px;
+    height: 75px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border: 1px solid #333;
+    border-collapse: collapse;
+    width: 600px;
+    font-size: 110%;
+    line-height: 110%;
+    margin: 50px auto 0 auto;
+}
+
+td {
+    border: 1px solid #333;
+    font-family: tahoma, sans-serif;
+    padding: 2px;
+    word-break: break-all;
+}
+
+.title {
+    width: 180px
+}
+
+b {
+    color: #e05a26;
+    font-weight: 100;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Item style start */
+
+.common_item_color {
+    color: #b5b5b5;
+}
+
+.magic_item_color {
+    color: #a0cfff;
+}
+
+.enchanted_item_color {
+    color: #a9ffea;
+}
+
+.rare_item_color {
+    color: #fff0a9;
+}
+
+.mystic_item_color {
+    color: #ffc1a9;
+}
+
+.legendary_item_color {
+    color: #eab933;
+}
+
+.epic_item_color {
+    color: #a3ea33;
+}
+
+.artifact_item_color {
+    color: #33eab0;
+}
+
+.relic_item_color {
+    color: #b742e8;
+}
+
+.icon_shadow_0 {
+    /*-webkit-box-shadow: inset 0 0 35px 5px rgba(181,181,181,0.4);*/
+    /*box-shadow: inset 0 0 35px 5px rgba(181,181,181,0.4);*/
+}
+
+.icon_shadow_1 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(160, 207, 255, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(160, 207, 255, 0.4);
+}
+
+.icon_shadow_2 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(169, 255, 234, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(169, 255, 234, 0.4);
+}
+
+.icon_shadow_3 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(255, 240, 169, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(255, 240, 169, 0.4);
+}
+
+.icon_shadow_4 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(255, 193, 169, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(255, 193, 169, 0.4);
+}
+
+.icon_shadow_5 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(234, 185, 51, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(234, 185, 51, 0.4);
+}
+
+.icon_shadow_6 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(163, 234, 51, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(163, 234, 51, 0.4);
+}
+
+.icon_shadow_7 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(51, 234, 176, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(51, 234, 176, 0.4);
+}
+
+.icon_shadow_8 {
+    -webkit-box-shadow: inset 0 0 35px 0 rgba(183, 66, 232, 0.4);
+    box-shadow: inset 0 0 35px 0 rgba(183, 66, 232, 0.4);
+}
+
+.item_d_icon {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.item_d_icon_c {
+    margin: 50px auto 20px auto;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #9c6c47;
+    border-radius: 3px;
+}
+
+.item_d_cont {
+    margin: -18px auto 0 auto;
+}
+
+.item_d_body {
+    width: 434px;
+    background: #13100b;
+}
+
+.item_d_top {
+    width: 434px;
+    height: 19px;
+    background: url(/inferno/images/item_d_top.png);
+}
+
+.item_d_bottom {
+    width: 434px;
+    height: 19px;
+    background: url(/inferno/images/item_d_bottom.png);
+}
+
+.item_d_line {
+    width: 434px;
+    height: 2px;
+    background: url(/inferno/images/item_d_line.png);
+    margin-bottom: 5px;
+}
+
+p.item_d_name {
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+    line-height: 100%;
+}
+
+p.item_d_price {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 12px;
+    margin: 0;
+    line-height: 100%;
+}
+
+p.item_d_type {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 2px 0 6px 0;
+    color: #87704c;
+    margin: 0;
+    line-height: 100%;
+}
+
+.item_d_pl {
+    width: 75%;
+    height: 26px;
+    float: left;
+}
+
+.item_d_w {
+    width: 100%;
+    height: 26px;
+}
+
+.item_d_pl p, .item_d_w p {
+    padding: 4px 0 4px 15px;
+    font-family: Arial, sans-serif;
+    font-size: 135%;
+    text-align: left;
+    color: #887962;
+}
+
+.item_d_cn {
+    text-align: center;
+    padding: 10px;
+    font-size: 120%;
+}
+
+.item_d_pr {
+    height: 26px;
+    margin-left: 75%;
+}
+
+.item_d_pr p {
+    padding: 4px 15px 4px 0;
+    font-family: Arial, sans-serif;
+    font-size: 135%;
+    text-align: right;
+    color: #887962;
+}
+
+p.item_d_m {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #3c6fa8;
+    padding: 4px;
+    margin: 0;
+    line-height: 100%;
+}
+
+p.item_d_r {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #d39e00;
+    padding: 4px;
+    margin: 0;
+    line-height: 100%;
+}
+
+.item_d_bl {
+    width: 50%;
+    height: 40px;
+    float: left;
+}
+
+.item_d_bl p {
+    padding: 4px 0 4px 15px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+    color: #887962;
+}
+
+.item_d_br {
+    height: 40px;
+    margin-left: 50%;
+}
+
+.item_d_br p {
+    padding: 4px 15px 4px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: right;
+    color: #887962;
+}
+
+
+.item_description_hidden {
+    display: none;
+}
+
+.item_description_visible {
+    display: block;
+    position: absolute;
+    transform: translateX(-40%);
+    z-index: 10;
+}
+
+.in_section_item {
+    width: 94%;
+    padding-top: 94%;
+    margin: -98% 0 0 2%;
+    border: 1px solid #9c6c47;
+    border-radius: 3px;
+    background: #1e1915;
+    background-size: cover;
+}
+
+.in_item_no_equip {
+    border: 1px solid #a22;
+}
+
+.item_menu_hidden {
+    display: none;
+}
+
+.item_menu_visible {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    transform: translateX(-20%);
+    width: 120px;
+    min-width: 150px;
+    height: auto;
+    background-color: #1a1410;
+    padding: 0;
+    border: 1px solid #65513d;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    color: #a9825d;
+    box-shadow: 0 0 4px #000;
+}
+
+.item_menu_visible ul {
+    padding: 0;
+    margin: 0;
+}
+
+.item_menu_visible li {
+    color: #dcb26a;
+    list-style: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    background: #1e1915 url(/inferno/images/row6.jpg) repeat-x top left;
+    border-bottom: 1px solid #43372d;
+    padding: 5px;
+    margin: 0;
+}
+
+.item_menu_visible li:hover {
+    color: #f0c377;
+    background: #5b4737;
+    cursor: pointer;
+}
+
+/* Item style end */

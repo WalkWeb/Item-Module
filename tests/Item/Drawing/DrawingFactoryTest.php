@@ -194,7 +194,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 1001,
                     'name'             => 'Light Crossbow',
-                    'icon'             => '/icon/items/crossbow/01.png',
+                    'icon'             => '/img/icon/items/crossbow/01.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::TWO_HAND,
                     'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
@@ -1206,7 +1206,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5031,
                     'name'             => 'Miner‘s Breastplate',
-                    'icon'             => '/icon/items/armors/11.png',
+                    'icon'             => '/img/icon/items/armors/11.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::ARMOR,
                     'armor_type_id'    => ArmorTypeInterface::HEAVY,
@@ -1235,7 +1235,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5101,
                     'name'             => 'Wanderer‘s Hat',
-                    'icon'             => '/icon/items/helmets/05.png',
+                    'icon'             => '/img/icon/items/helmets/05.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::HELMET,
                     'armor_type_id'    => ArmorTypeInterface::ROBE,
@@ -1262,7 +1262,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5201,
                     'name'             => 'Wanderer‘s Gloves',
-                    'icon'             => '/icon/items/gloves/02.png',
+                    'icon'             => '/img/icon/items/gloves/02.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::GLOVES,
                     'armor_type_id'    => ArmorTypeInterface::ROBE,
@@ -1289,7 +1289,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5301,
                     'name'             => 'Wanderer‘s Shoes',
-                    'icon'             => '/icon/items/boots/02.png',
+                    'icon'             => '/img/icon/items/boots/02.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::BOOTS,
                     'armor_type_id'    => ArmorTypeInterface::ROBE,
@@ -1316,7 +1316,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5401,
                     'name'             => 'Wanderer Belt',
-                    'icon'             => '/icon/items/legs/03.png',
+                    'icon'             => '/img/icon/items/legs/03.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::LEGS,
                     'armor_type_id'    => ArmorTypeInterface::ROBE,
@@ -1343,7 +1343,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5501,
                     'name'             => 'Wanderer‘s Armlets',
-                    'icon'             => '/icon/items/shoulders/02.png',
+                    'icon'             => '/img/icon/items/shoulders/02.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::SHOULDERS,
                     'armor_type_id'    => ArmorTypeInterface::ROBE,
@@ -1370,7 +1370,7 @@ class DrawingFactoryTest extends TestCase
                 [
                     'id'               => 5601,
                     'name'             => 'Round Shield',
-                    'icon'             => '/icon/items/shields/01.png',
+                    'icon'             => '/img/icon/items/shields/01.png',
                     'type_id'          => ItemTypeInterface::EQUIP,
                     'equip_type_id'    => EquipTypeInterface::SHIELD,
                     'armor_type_id'    => ArmorTypeInterface::MIDDLE,

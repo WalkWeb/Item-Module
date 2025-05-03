@@ -61,7 +61,7 @@ class WoodTest extends TestCase
                 'wood',
                 [
                     'name'    => 'Wood',
-                    'icon'    => '/icon/woods/woods.png',
+                    'icon'    => '/img/icon/woods/woods.png',
                     'level'   => 1,
                     'quality' => 0.8,
                     'prefix'  => '',

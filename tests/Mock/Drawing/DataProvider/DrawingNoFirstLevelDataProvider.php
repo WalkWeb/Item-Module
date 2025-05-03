@@ -24,7 +24,7 @@ class DrawingNoFirstLevelDataProvider extends AbstractDrawingDataProvider
         1010 => [
             'id'               => 1010,
             'name'             => 'Rapid Fire Crossbow',
-            'icon'             => '/icon/items/crossbow/02.png',
+            'icon'             => '/img/icon/items/crossbow/02.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::CROSSBOW,
