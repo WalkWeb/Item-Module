@@ -48,7 +48,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -100,7 +100,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -152,7 +152,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -204,7 +204,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -256,7 +256,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -308,7 +308,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -361,7 +361,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -413,7 +413,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -465,7 +465,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -517,7 +517,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -569,7 +569,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -621,7 +621,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -675,7 +675,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -735,7 +735,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -795,7 +795,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -855,7 +855,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -915,7 +915,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -975,7 +975,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -1036,7 +1036,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -1096,7 +1096,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -1156,7 +1156,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -1216,7 +1216,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -1276,7 +1276,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
@@ -1336,7 +1336,7 @@ class Axe extends AbstractDrawingDataProvider
                 ],
                 [
                     'name'    => 'offense.criticalChance',
-                    'value'   => 8,
+                    'value'   => 5,
                     'quality' => false,
                     'prefix'  => '',
                     'suffix'  => '%',
