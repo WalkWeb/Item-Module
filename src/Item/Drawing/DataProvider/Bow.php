@@ -19,7 +19,7 @@ class Bow extends AbstractDrawingDataProvider
         1051 => [
             'id'               => 1051,
             'name'             => 'Longbow',
-            'icon'             => '/img/icon/items/bows/01.png',
+            'icon'             => '/img/icon/items/bows/long/01.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -71,7 +71,7 @@ class Bow extends AbstractDrawingDataProvider
         1052 => [
             'id'               => 1052,
             'name'             => 'Short Bow',
-            'icon'             => '/img/icon/items/bows/01.png',
+            'icon'             => '/img/icon/items/bows/short/01.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -123,7 +123,7 @@ class Bow extends AbstractDrawingDataProvider
         1053 => [
             'id'               => 1053,
             'name'             => 'Composite Bow',
-            'icon'             => '/img/icon/items/bows/01.png',
+            'icon'             => '/img/icon/items/bows/long/02.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -175,7 +175,7 @@ class Bow extends AbstractDrawingDataProvider
         1054 => [
             'id'               => 1054,
             'name'             => 'Hunting Bow',
-            'icon'             => '/img/icon/items/bows/01.png',
+            'icon'             => '/img/icon/items/bows/short/02.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -227,7 +227,7 @@ class Bow extends AbstractDrawingDataProvider
         1055 => [
             'id'               => 1055,
             'name'             => 'War Longbow',
-            'icon'             => '/img/icon/items/bows/02.png',
+            'icon'             => '/img/icon/items/bows/long/03.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -279,7 +279,7 @@ class Bow extends AbstractDrawingDataProvider
         1056 => [
             'id'               => 1056,
             'name'             => 'Carved Bow',
-            'icon'             => '/img/icon/items/bows/02.png',
+            'icon'             => '/img/icon/items/bows/short/03.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -331,7 +331,7 @@ class Bow extends AbstractDrawingDataProvider
         1057 => [
             'id'               => 1057,
             'name'             => 'Elven Bow',
-            'icon'             => '/img/icon/items/bows/02.png',
+            'icon'             => '/img/icon/items/bows/long/04.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -383,7 +383,7 @@ class Bow extends AbstractDrawingDataProvider
         1058 => [
             'id'               => 1058,
             'name'             => 'Compound Bow',
-            'icon'             => '/img/icon/items/bows/02.png',
+            'icon'             => '/img/icon/items/bows/short/04.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -435,7 +435,7 @@ class Bow extends AbstractDrawingDataProvider
         1059 => [
             'id'               => 1059,
             'name'             => 'Amazon Bow',
-            'icon'             => '/img/icon/items/bows/03.png',
+            'icon'             => '/img/icon/items/bows/long/05.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -487,7 +487,7 @@ class Bow extends AbstractDrawingDataProvider
         1060 => [
             'id'               => 1060,
             'name'             => 'Soul Piercer',
-            'icon'             => '/img/icon/items/bows/03.png',
+            'icon'             => '/img/icon/items/bows/short/05.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -539,7 +539,7 @@ class Bow extends AbstractDrawingDataProvider
         1061 => [
             'id'               => 1061,
             'name'             => 'Royal Bow',
-            'icon'             => '/img/icon/items/bows/03.png',
+            'icon'             => '/img/icon/items/bows/long/06.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
@@ -591,7 +591,7 @@ class Bow extends AbstractDrawingDataProvider
         1062 => [
             'id'               => 1062,
             'name'             => 'Bow of the Night',
-            'icon'             => '/img/icon/items/bows/03.png',
+            'icon'             => '/img/icon/items/bows/short/06.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::TWO_HAND,
             'weapon_type_id'   => WeaponTypeInterface::BOW,
