@@ -18,7 +18,7 @@ class Ring extends AbstractDrawingDataProvider
         5701 => [
             'id'               => 5701,
             'name'             => 'Ring',
-            'icon'             => '/img/icon/items/rings/01.png',
+            'icon'             => '/img/icon/items/rings/05.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::RING,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -37,7 +37,7 @@ class Ring extends AbstractDrawingDataProvider
         5702 => [
             'id'               => 5702,
             'name'             => 'Ring with Pearl',
-            'icon'             => '/img/icon/items/rings/01.png',
+            'icon'             => '/img/icon/items/rings/06.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::RING,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -56,7 +56,7 @@ class Ring extends AbstractDrawingDataProvider
         5703 => [
             'id'               => 5703,
             'name'             => 'Ring with Ruby',
-            'icon'             => '/img/icon/items/rings/01.png',
+            'icon'             => '/img/icon/items/rings/07.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::RING,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -75,7 +75,7 @@ class Ring extends AbstractDrawingDataProvider
         5704 => [
             'id'               => 5704,
             'name'             => 'Ring with Amber',
-            'icon'             => '/img/icon/items/rings/01.png',
+            'icon'             => '/img/icon/items/rings/08.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::RING,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -94,7 +94,7 @@ class Ring extends AbstractDrawingDataProvider
         5705 => [
             'id'               => 5705,
             'name'             => 'Ring of Moon',
-            'icon'             => '/img/icon/items/rings/01.png',
+            'icon'             => '/img/icon/items/rings/09.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::RING,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
@@ -113,7 +113,7 @@ class Ring extends AbstractDrawingDataProvider
         5706 => [
             'id'               => 5706,
             'name'             => 'Ring of Wisdom',
-            'icon'             => '/img/icon/items/rings/01.png',
+            'icon'             => '/img/icon/items/rings/10.png',
             'type_id'          => ItemTypeInterface::EQUIP,
             'equip_type_id'    => EquipTypeInterface::RING,
             'armor_type_id'    => ArmorTypeInterface::LIGHT,
